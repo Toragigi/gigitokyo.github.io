@@ -1,38 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIGI TOKYO</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: white;
-    }
-
-    img {
-      max-width: 500px;
-      width: 90%;
-      height: auto;
-    }
-
-    p {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #333;
-      letter-spacing: 2px;
-    }
-  </style>
+  <title>GIGI | 韓国系モードアパレル</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img src="GIGI%20base.jpg" alt="GIGI TOKYO Logo">
-  <p>Coming Soon</p>
+  <header>
+    <h1 class="logo">GIGI</h1>
+    <nav>
+      <ul>
+        <li><a href="#products">商品一覧</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="https://instagram.com/yourbrand" target="_blank">Instagram</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Rebel Elegance in the Shadows</h2>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1580316013364-fdafb0c152b9?auto=format&fit=crop&w=600&q=80" alt="item1">
+      <h3>Dark Collar Jacket</h3>
+      <button class="buy-button" onclick="buyNow('Dark Collar Jacket')">購入する</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1618354691080-8be8f4db3dc1?auto=format&fit=crop&w=600&q=80" alt="item2">
+      <h3>Shadow Flare Pants</h3>
+      <button class="buy-button" onclick="buyNow('Shadow Flare Pants')">購入する</button>
+    </div>
+    <!-- 商品をここに追加 -->
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>お問い合わせ</h2>
+    <form>
+      <input type="text" placeholder="お名前" required>
+      <input type="email" placeholder="メールアドレス" required>
+      <textarea placeholder="お問い合わせ内容" required></textarea>
+      <button type="submit">送信</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Instagram: <a href="https://instagram.com/yourbrand" target="_blank">@gigi_official</a></p>
+    <p>&copy; 2025 GIGI All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
