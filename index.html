@@ -1,58 +1,71 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIGI | 韓国系モードアパレル</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIGI Tokyo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1 class="logo">GIGI</h1>
-    <nav>
-      <ul>
-        <li><a href="#products">商品一覧</a></li>
-        <li><a href="#contact">お問い合わせ</a></li>
-        <li><a href="https://instagram.com/yourbrand" target="_blank">Instagram</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">GIGI Tokyo</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#all">ALL</a></li>
+                    <li><a href="#tops">TOPS</a></li>
+                    <li><a href="#pants">PANTS</a></li>
+                    <li><a href="#setup">SETUP</a></li>
+                    <li class="divider">|</li>
+                    <li><a href="#season">SEASON</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#search" class="search-icon">Search</a>
+                <a href="#login" class="login-icon">Login</a>
+            </div>
+            <div class="mobile-menu" id="mobile-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Rebel Elegance in the Shadows</h2>
-    </div>
-  </section>
+<section class="hero">
+  <img src="images/Coming soon.jpg" alt="Coming Soon" class="hero-img">
+</section>
+  
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3></h3>
+                <ul class="footer-links">
+                    <li><a href="#all"></a></li>
+                    <li><a href="#tops"></a></li>
+                    <li><a href="#pants"></a></li>
+                    <li><a href="#setup"></a></li>
+                    <li><a href="#season"></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact us</h3>
+                <ul class="footer-links">
+                    <li>Email: info@gigitokyo.jp</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 GIGI Tokyo. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-  <section class="products" id="products">
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1580316013364-fdafb0c152b9?auto=format&fit=crop&w=600&q=80" alt="item1">
-      <h3>Dark Collar Jacket</h3>
-      <button class="buy-button" onclick="buyNow('Dark Collar Jacket')">購入する</button>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1618354691080-8be8f4db3dc1?auto=format&fit=crop&w=600&q=80" alt="item2">
-      <h3>Shadow Flare Pants</h3>
-      <button class="buy-button" onclick="buyNow('Shadow Flare Pants')">購入する</button>
-    </div>
-    <!-- 商品をここに追加 -->
-  </section>
-
-  <section class="contact" id="contact">
-    <h2>お問い合わせ</h2>
-    <form>
-      <input type="text" placeholder="お名前" required>
-      <input type="email" placeholder="メールアドレス" required>
-      <textarea placeholder="お問い合わせ内容" required></textarea>
-      <button type="submit">送信</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>Instagram: <a href="https://instagram.com/yourbrand" target="_blank">@gigi_official</a></p>
-    <p>&copy; 2025 GIGI All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
