@@ -1,98 +1,302 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
 body {
-  margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #111;
-  color: #fff;
+    background-color: #ffffff;
+    color: #000;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 header {
-  background-color: #000;
-  padding: 20px;
-  text-align: center;
+    background-color: #ffffff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.logo span {
+    color: #e74c3c;
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
+    display: flex;
+    list-style: none;
 }
 
-nav li {
-  display: inline-block;
-  margin: 0 15px;
+nav ul li {
+    margin-left: 30px;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
 }
 
 .hero {
-  background: url('https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-  padding: 100px 20px;
-  text-align: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 80px;
 }
 
-.hero-text h2 {
-  color: #fff;
-  font-size: 2em;
-  margin: 0;
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.products {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 40px 20px;
-  gap: 40px;
-  background-color: #222;
+/* Shopping Guide Section */
+.shopping-guide {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-.product {
-  width: 300px;
-  text-align: center;
+.shopping-guide h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
 }
 
-.product img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+.guide-section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 20px;
 }
 
-.buy-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #000;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
+.guide-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
 }
 
-.contact {
-  padding: 50px 20px;
-  background-color: #111;
+.guide-title::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    transition: transform 0.3s;
 }
 
-.contact form {
-  max-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.guide-title.active::after {
+    content: '-';
 }
 
-.contact input,
-.contact textarea,
-.contact button {
-  padding: 10px;
-  font-size: 16px;
+.guide-content {
+    display: none;
+    padding-left: 20px;
+}
+
+.guide-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.guide-content h3 {
+    font-size: 20px;
+    margin-top: 15px;
 }
 
 footer {
-  background-color: #000;
-  color: #999;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
+    background-color: #f9f9f9;
+    color: #000;
+    padding: 60px 20px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.footer-col h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #000;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links li a {
+    color: #000;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #666;
+}
+
+.social-links {
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin-right: 10px;
+    color: #000;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #bbb;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+    margin-top: 30px;
+    color: #000;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav, .header-icons {
+        position: absolute;
+        right: 0;
+        top: 80px;
+        background-color: #fff;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.active, .header-icons.active {
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    nav ul li {
+        margin: 10px 20px;
+    }
+
+    nav ul li.divider {
+        display: none;
+    }
+
+    .header-icons {
+        top: auto;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .hero {
+        margin-top: 60px;
+    }
+
+    .shopping-guide h1 {
+        font-size: 28px;
+    }
+
+    .guide-title {
+        font-size: 20px;
+    }
+
+    .guide-content h3 {
+        font-size: 18px;
+    }
 }
