@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GIGI Tokyo - 2025 SPRING/SUMMER</title>
+  <title>2025 SPRING/SUMMER | GIGI Tokyo</title>
   <link rel="stylesheet" href="2025-spring-summer.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -20,39 +20,40 @@
         <a href="contact.html">CONTACT</a>
       </div>
     </div>
-    <div class="logo">
-      <a href="index.html">GIGI Tokyo</a>
-    </div>
+    <div class="logo"><a href="index.html">GIGI Tokyo</a></div>
   </header>
 
   <!-- TITLE -->
   <section class="collection-title">
-    <h1 class="collection-heading">2025 SPRING/SUMMER</h1>
+    <h2 class="collection-heading">2025 SPRING/SUMMER</h2>
     <div class="underline"></div>
   </section>
 
   <!-- PRODUCTS -->
   <section class="product-section">
     <div class="product-card">
-      <img src="images/product1.jpg" alt="Flare Mini Skirt">
+      <img src="images/flare-mini-skirt.jpg" alt="Flare Mini Skirt" />
       <p class="product-name">Flare Mini Skirt</p>
       <p class="product-price">¥0</p>
       <p class="product-new">NEW</p>
     </div>
+
     <div class="product-card">
-      <img src="images/product2.jpg" alt="Sharp Bustier Top">
+      <img src="images/sharp-bustier-top.jpg" alt="Sharp Bustier Top" />
       <p class="product-name">Sharp Bustier Top</p>
       <p class="product-price">¥0</p>
       <p class="product-new">NEW</p>
     </div>
+
     <div class="product-card">
-      <img src="images/product3.jpg" alt="Distressed Knit Sweater">
+      <img src="images/distressed-knit-sweater.jpg" alt="Distressed Knit Sweater" />
       <p class="product-name">Distressed Knit Sweater</p>
       <p class="product-price">¥0</p>
       <p class="product-new">NEW</p>
     </div>
+
     <div class="product-card">
-      <img src="images/product4.jpg" alt="Lace Layer Skirt">
+      <img src="images/lace-layer-skirt.jpg" alt="Lace Layer Skirt" />
       <p class="product-name">Lace Layer Skirt</p>
       <p class="product-price">¥0</p>
       <p class="product-new">NEW</p>
@@ -65,9 +66,8 @@
     const menuItems = document.getElementById('menuItems');
 
     menuBtn.addEventListener('click', () => {
-      menuItems.style.display = menuItems.style.display === 'flex' ? 'none' : 'flex';
+      menuItems.classList.toggle('show');
     });
   </script>
-
 </body>
 </html>
