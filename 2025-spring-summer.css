@@ -1,91 +1,78 @@
-/* spring-summer.css */
-body {
-  background-color: #FAFAFA;
-  font-family: 'Noto Sans JP', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #111;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIGI Tokyo - 2025 SPRING/SUMMER</title>
+  <link rel="stylesheet" href="spring-summer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: white;
-  border-bottom: 1px solid #ddd;
-}
+  <!-- HEADER -->
+  <header class="top-bar">
+    <div class="menu">
+      MENU
+      <div class="menu-items">
+        <a href="#">2025 AUTUMN/WINTER</a>
+        <a href="#">2025 SPRING/SUMMER</a>
+        <a href="#">INFORMATION</a>
+        <a href="#">CONTACT</a>
+      </div>
+    </div>
+    <div class="logo">GIGI Tokyo</div>
+  </header>
 
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 35px;
-  font-weight: bold;
-}
+  <!-- PRODUCT SECTION -->
+  <section class="product-section">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/product1-front.jpg" alt="S open knit tops heart" class="main-img">
+        <img src="images/product1-back.jpg" alt="Back view" class="hover-img">
+      </div>
+      <div class="product-info">
+        <p>S open knit tops heart</p>
+        <p>\15,400</p>
+        <span>NEW</span>
+      </div>
+    </div>
 
-.menu a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
-}
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/product2-front.jpg" alt="S code tie tops heart" class="main-img">
+        <img src="images/product2-back.jpg" alt="Back view" class="hover-img">
+      </div>
+      <div class="product-info">
+        <p>S code tie tops heart</p>
+        <p>\8,800</p>
+        <span>NEW</span>
+      </div>
+    </div>
 
-.product-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 40px 20px;
-  gap: 40px;
-}
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/product3-front.jpg" alt="S print tops charm" class="main-img">
+        <img src="images/product3-back.jpg" alt="Back view" class="hover-img">
+      </div>
+      <div class="product-info">
+        <p>S print tops charm</p>
+        <p>\9,900</p>
+        <span>NEW</span>
+      </div>
+    </div>
 
-.product-card {
-  background-color: #fff;
-  width: 280px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/product4-front.jpg" alt="S cutting halter shirt" class="main-img">
+        <img src="images/product4-back.jpg" alt="Back view" class="hover-img">
+      </div>
+      <div class="product-info">
+        <p>S cutting halter shirt</p>
+        <p>\11,000</p>
+        <span>NEW</span>
+      </div>
+    </div>
+  </section>
 
-.product-card:hover {
-  transform: scale(1.03);
-}
-
-.product-image {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-}
-
-.product-image img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.5s ease;
-}
-
-.product-image .hover-img {
-  opacity: 0;
-}
-
-.product-card:hover .hover-img {
-  opacity: 1;
-}
-
-.product-card:hover .main-img {
-  opacity: 0;
-}
-
-.product-info {
-  padding: 15px 10px;
-}
-
-.product-info p {
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-.product-info span {
-  font-size: 12px;
-  color: #999;
-}
-
+</body>
+</html>
