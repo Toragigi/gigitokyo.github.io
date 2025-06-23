@@ -1,304 +1,136 @@
-/* style.css */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans JP', sans-serif;
-}
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
 body {
-    background-color: #ffffff;
-    color: #000;
-    line-height: 1.6;
-    overflow-x: hidden; 
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #111111;
+  line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
+/* Header */
 header {
-    background-color: #ffffff;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-}
-
-.logo span {
-    color: #e74c3c;
+.logo a {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-nav ul li {
-    margin-left: 30px;
+nav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
 }
 
-nav ul li a {
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s;
+nav .divider {
+  color: #999;
 }
 
-nav ul li a:hover {
-    color: #e74c3c;
+.header-icons a {
+  margin-left: 15px;
+  color: #111;
+  font-size: 14px;
+  text-decoration: none;
 }
 
+/* Mobile Menu (placeholder) */
 .mobile-menu {
-    display: none;
-    cursor: pointer;
+  display: none;
 }
 
-.mobile-menu div {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
+/* Hero Section */
 .hero {
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-top: 0px;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Shopping Guide Section */
-.shopping-guide {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-.shopping-guide h1 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    text-align: center;
-    border-bottom: 2px solid #000000;
-    padding-bottom: 10px;
-}
-
-.guide-section {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #cccccc;
-    padding-bottom: 20px;
-}
-
-.guide-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    position: relative;
-    padding-right: 20px;
-}
-
-.guide-title::after {
-    content: '+';
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 24px;
-    transition: transform 0.3s;
-}
-
-.guide-title.active::after {
-    content: '-';
-}
-
-.guide-content {
-    display: none;
-    padding-left: 20px;
-}
-
-.guide-content ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.guide-content h3 {
-    font-size: 20px;
-    margin-top: 15px;
-}
-
+/* Footer */
 footer {
-    background-color: #f9f9f9;
-    color: #000;
-    padding: 60px 20px 20px;
+  background-color: #ffffff;
+  padding: 40px;
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .footer-col {
-    flex: 1;
-    min-width: 250px;
-    margin-bottom: 30px;
-}
-
-.footer-col h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-col h3:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background-color: #000;
+  flex: 1 1 200px;
+  margin: 10px;
 }
 
 .footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-links li a {
-    color: #000;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
 }
 
 .footer-links li a:hover {
-    color: #666;
-}
-
-.social-links {
-    display: flex;
-    margin-top: 20px;
-}
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #ddd;
-    border-radius: 50%;
-    margin-right: 10px;
-    color: #000;
-    transition: background-color 0.3s;
-}
-
-.social-links a:hover {
-    background-color: #bbb;
+  text-decoration: underline;
 }
 
 .copyright {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid #ddd;
-    margin-top: 30px;
-    color: #000;
-    font-size: 14px;
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  margin-top: 30px;
 }
 
-@media screen and (max-width: 768px) {
-    .header-container {
-        padding: 0 15px;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    nav, .header-icons {
-        position: absolute;
-        right: 0;
-        top: 80px;
-        background-color: #fff;
-        width: 100%;
-        height: 0;
-        overflow: hidden;
-        transition: height 0.3s ease;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    nav.active, .header-icons.active {
-        height: auto;
-    }
-
-    nav ul {
-        flex-direction: column;
-        padding: 20px 0;
-    }
-
-    nav ul li {
-        margin: 10px 20px;
-    }
-
-    nav ul li.divider {
-        display: none;
-    }
-
-    .header-icons {
-        top: auto;
-        display: flex;
-        justify-content: center;
-        padding: 10px 0;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
-    .hero {
-        margin-top: 0px;
-    }
-
-    .shopping-guide h1 {
-        font-size: 28px;
-    }
-
-    .guide-title {
-        font-size: 20px;
-    }
-
-    .guide-content h3 {
-        font-size: 18px;
-    }
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    cursor: pointer;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
