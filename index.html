@@ -1,63 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIGI Tokyo</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIGI Tokyo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <a href="#">GIGI Tokyo</a>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#all">ALL</a></li>
-                    <li><a href="#tops">TOPS</a></li>
-                    <li><a href="#pants">PANTS</a></li>
-                    <li><a href="#setup">SETUP</a></li>
-                    <li class="divider">|</li>
-                    <li><a href="#season">SEASON</a></li>
-                </ul>
-            </nav>
-            <div class="header-icons">
-                <a href="#search" class="search-icon">Search</a>
-                <a href="#login" class="login-icon">Login</a>
-            </div>
-            <div class="mobile-menu" id="mobile-menu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </header>
 
-    <section class="hero full-screen">
-        <img src="images/Coming soon.jpg" alt="Coming Soon" class="hero-img">
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/Coming soon.jpg" alt="Main Visual">
+    <div class="hero-text">
+      <h1>GIGI Tokyo</h1>
+      <p>Rebel Elegance in the Shadows</p>
+    </div>
+  </section>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <!-- 必要であればブランドの説明をここに追加 -->
-            </div>
-            <div class="footer-col">
-                <ul class="footer-links">
-                    <li><a href="#all">ALL</a></li>
-                    <li><a href="#tops">TOPS</a></li>
-                    <li><a href="#pants">PANTS</a></li>
-                    <li><a href="#setup">SETUP</a></li>
-                    <li><a href="#season">SEASON</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 GIGI Tokyo. All Rights Reserved.</p>
-        </div>
-    </footer>
+  <!-- About / Concept Section -->
+  <section class="about">
+    <h2>About</h2>
+    <p>
+      GIGIは黒猫のようにミステリアスで自由。韓国モードの世界観と、繊細な造形美を融合させたアパレルブランドです。
+    </p>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Lookbook Section -->
+  <section class="lookbook">
+    <h2>All Products</h2>
+    <div class="product-grid">
+      <div class="product-item">
+        <img src="images/Coming soon.jpg" alt="item">
+        <div class="product-info">
+          <p class="name">商品名</p>
+          <p class="price">¥12,000</p>
+        </div>
+      </div>
+      <!-- 追加の商品も同じ構造で -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GIGI Tokyo. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
