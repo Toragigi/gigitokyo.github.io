@@ -1,148 +1,117 @@
-/* 共通フォントと背景 */
+/* 全体背景とベース設定 */
 body {
-  font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #fafafa;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #FAFAFA;
   color: #000;
 }
 
-/* HEADER全体 */
+/* ヘッダー */
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background-color: #fff;
+  padding: 14px 24px;
   border-bottom: 1px solid #ccc;
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 10;
 }
 
-/* GIGI Tokyo ロゴ */
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: bold;
-}
-
+/* ロゴ */
 .logo a {
-  color: #000;
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
   text-decoration: none;
+  color: #000;
 }
 
-/* MENU 表示ボタン */
+/* メニュー */
 .menu {
   cursor: pointer;
-  font-size: 14px;
-  z-index: 2;
+  position: relative;
+  font-weight: bold;
+  user-select: none;
 }
 
-/* MENU 展開アイテム */
 .menu-items {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 60px;
-  left: 20px;
-  background-color: #fff;
-  padding: 10px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1;
+  top: 28px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 100;
+}
+
+.menu-items.show {
+  display: flex;
 }
 
 .menu-items a {
+  padding: 10px 14px;
   text-decoration: none;
   color: #000;
-  padding: 8px 20px;
-  font-size: 14px;
+  font-weight: normal;
   white-space: nowrap;
 }
 
 .menu-items a:hover {
-  background-color: #f0f0f0;
+  background-color: #eee;
 }
 
-/* タイトル */
+/* タイトル（2025 SPRING/SUMMER） */
 .collection-title {
   text-align: center;
-  margin-top: 40px;
+  margin: 60px 0 20px;
 }
 
 .collection-heading {
   font-size: 33px;
   font-weight: normal;
-  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 8px;
 }
 
 .underline {
-  width: 90%;
+  width: 120px;
   height: 2px;
   background-color: #000;
-  margin: 0 auto 30px auto;
+  margin: 0 auto;
 }
 
 /* 商品セクション */
 .product-section {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0 auto 40px auto;
-  max-width: 1200px;
-  padding: 0 20px;
-  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0; /* 商品同士の隙間ゼロ */
+  padding: 0 40px 80px;
 }
 
 /* 商品カード */
 .product-card {
-  width: 25%;
-  box-sizing: border-box;
+  background-color: #FAFAFA;
   text-align: center;
-  padding: 0;
-  margin: 0;
+  padding: 10px 0;
 }
 
 .product-card img {
   width: 100%;
   height: auto;
-  margin-bottom: 5px;
+  display: block;
 }
 
-/* 商品情報 */
-.product-name {
-  font-size: 13px;
-  margin: 3px 0 1px;
-}
-
-.product-price {
-  font-size: 13px;
-  margin: 1px 0;
+/* 商品情報（名前・価格・NEW） */
+.product-name,
+.product-price,
+.product-new {
+  margin: 4px 0; /* 縦の隙間を調整 */
+  font-size: 13px; /* 元のサイズから -5 */
 }
 
 .product-new {
-  font-size: 13px;
-  margin: 1px 0;
   color: #000;
-}
-
-/* メニュー展開用スクリプト連携のためのクラス操作を想定 */
-.show {
-  display: flex !important;
-}
-
-/* レスポンシブ対応 */
-@media screen and (max-width: 768px) {
-  .product-card {
-    width: 50%;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  .collection-heading {
-    font-size: 28px;
-  }
+  font-weight: normal;
 }
