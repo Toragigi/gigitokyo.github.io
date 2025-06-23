@@ -1,132 +1,76 @@
-/* 全体の基本設定 */
 body {
+  background-color: #FAFAFA;
   font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FAFAFA;
-  color: #222;
 }
 
-/* ヘッダー */
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 30px;
   background-color: white;
-  padding: 20px 30px;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  font-weight: bold;
+}
+
+.menu-items a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: black;
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 35px;
 }
 
-.menu {
-  position: relative;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.menu-items {
-  display: none;
-  position: absolute;
-  top: 30px;
-  left: 0;
-  background: white;
-  padding: 10px 0;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  flex-direction: column;
-  min-width: 180px;
-}
-
-.menu:hover .menu-items {
-  display: flex;
-}
-
-.menu-items a {
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #222;
-  transition: background 0.2s ease;
-}
-
-.menu-items a:hover {
-  background-color: #f0f0f0;
-}
-
-/* 商品一覧 */
 .product-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-  padding: 60px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
 .product-card {
-  background-color: #fff;
-  padding: 15px;
+  width: 250px;
+  margin: 15px;
+  background-color: white;
   text-align: center;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 14px;
 }
 
 .product-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
 }
 
 .product-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.4s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .product-image .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
 }
 
-.product-card:hover .hover-img {
+.product-image:hover .hover-img {
   opacity: 1;
 }
 
-.product-card:hover .main-img {
+.product-image:hover .main-img {
   opacity: 0;
 }
 
-.product-info {
-  margin-top: 16px;
-}
-
 .product-info p {
-  margin: 4px 0;
-  font-size: 15px;
+  margin: 5px 0;
 }
 
 .product-info span {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 4px 8px;
-  font-size: 12px;
-  color: white;
-  background-color: black;
-  border-radius: 3px;
+  color: red;
   font-weight: bold;
 }
