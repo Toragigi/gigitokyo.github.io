@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GIGI Tokyo - 2025 SPRING/SUMMER</title>
+  <title>2025 SPRING/SUMMER | GIGI Tokyo</title>
   <link rel="stylesheet" href="2025-spring-summer.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 </head>
@@ -20,58 +20,43 @@
         <a href="contact.html">CONTACT</a>
       </div>
     </div>
-    <div class="logo" id="logo">
-      <a href="index.html">GIGI Tokyo</a>
-    </div>
+    <div class="logo"><a href="index.html">GIGI Tokyo</a></div>
   </header>
 
   <!-- TITLE -->
-  <h2 class="season-title">2025 SPRING/SUMMER</h2>
+  <section class="collection-title">
+    <h2 class="collection-heading">2025 SPRING/SUMMER</h2>
+    <div class="underline"></div>
+  </section>
 
-  <!-- PRODUCT SECTION -->
+  <!-- PRODUCTS -->
   <section class="product-section">
     <div class="product-card">
-      <div class="product-image">
-        <img src="images/flare-mini-skirt.jpg" alt="Flare Mini Skirt" class="main-img">
-      </div>
-      <div class="product-info">
-        <p class="name">Flare Mini Skirt</p>
-        <p class="price">¥0</p>
-        <span class="tag">NEW</span>
-      </div>
+      <img src="images/flare-mini-skirt.jpg" alt="Flare Mini Skirt" />
+      <p class="product-name">Flare Mini Skirt</p>
+      <p class="product-price">¥0</p>
+      <p class="product-new">NEW</p>
     </div>
 
     <div class="product-card">
-      <div class="product-image">
-        <img src="images/sharp-bustier-top.jpg" alt="Sharp Bustier Top" class="main-img">
-      </div>
-      <div class="product-info">
-        <p class="name">Sharp Bustier Top</p>
-        <p class="price">¥0</p>
-        <span class="tag">NEW</span>
-      </div>
+      <img src="images/sharp-bustier-top.jpg" alt="Sharp Bustier Top" />
+      <p class="product-name">Sharp Bustier Top</p>
+      <p class="product-price">¥0</p>
+      <p class="product-new">NEW</p>
     </div>
 
     <div class="product-card">
-      <div class="product-image">
-        <img src="images/distressed-knit-sweater.jpg" alt="Distressed Knit Sweater" class="main-img">
-      </div>
-      <div class="product-info">
-        <p class="name">Distressed Knit Sweater</p>
-        <p class="price">¥0</p>
-        <span class="tag">NEW</span>
-      </div>
+      <img src="images/distressed-knit-sweater.jpg" alt="Distressed Knit Sweater" />
+      <p class="product-name">Distressed Knit Sweater</p>
+      <p class="product-price">¥0</p>
+      <p class="product-new">NEW</p>
     </div>
 
     <div class="product-card">
-      <div class="product-image">
-        <img src="images/lace-layer-skirt.jpg" alt="Lace Layer Skirt" class="main-img">
-      </div>
-      <div class="product-info">
-        <p class="name">Lace Layer Skirt</p>
-        <p class="price">¥0</p>
-        <span class="tag">NEW</span>
-      </div>
+      <img src="images/lace-layer-skirt.jpg" alt="Lace Layer Skirt" />
+      <p class="product-name">Lace Layer Skirt</p>
+      <p class="product-price">¥0</p>
+      <p class="product-new">NEW</p>
     </div>
   </section>
 
@@ -79,15 +64,9 @@
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const menuItems = document.getElementById('menuItems');
-    const logo = document.getElementById('logo');
 
     menuBtn.addEventListener('click', () => {
-      menuItems.style.display = menuItems.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    window.addEventListener('scroll', () => {
-      const opacity = 1 - Math.min(window.scrollY / 300, 1);
-      logo.style.opacity = opacity;
+      menuItems.classList.toggle('show');
     });
   </script>
 </body>
