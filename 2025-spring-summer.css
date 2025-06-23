@@ -1,100 +1,98 @@
-/* 全体背景とベース設定 */
 body {
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
+  padding: 0;
   background-color: #FAFAFA;
-  color: #000;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-/* ヘッダー */
+/* HEADER */
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 24px;
-  border-bottom: 1px solid #ccc;
+  padding: 18px 30px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
-  background-color: #fff;
-  z-index: 10;
+  z-index: 1000;
 }
 
-/* ロゴ */
-.logo a {
-  font-family: 'Playfair Display', serif;
-  font-size: 35px;
-  text-decoration: none;
-  color: #000;
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-/* メニュー */
 .menu {
   cursor: pointer;
-  position: relative;
-  font-weight: bold;
+  font-size: 16px;
   user-select: none;
 }
 
 .menu-items {
   display: none;
   flex-direction: column;
-  position: absolute;
-  top: 28px;
-  left: 0;
   background-color: white;
+  position: absolute;
+  top: 25px;
+  left: 0;
   border: 1px solid #ccc;
-  z-index: 100;
+  padding: 10px;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 0;
 }
 
 .menu-items.show {
   display: flex;
 }
 
-.menu-items a {
-  padding: 10px 14px;
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  text-align: center;
+}
+
+.logo a {
+  color: black;
   text-decoration: none;
-  color: #000;
-  font-weight: normal;
-  white-space: nowrap;
 }
 
-.menu-items a:hover {
-  background-color: #eee;
-}
-
-/* タイトル（2025 SPRING/SUMMER） */
+/* TITLE SECTION */
 .collection-title {
   text-align: center;
-  margin: 60px 0 20px;
+  padding: 40px 20px 10px;
 }
 
 .collection-heading {
   font-size: 33px;
   font-weight: normal;
-  font-family: 'Playfair Display', serif;
   margin-bottom: 8px;
 }
 
 .underline {
   width: 120px;
   height: 2px;
-  background-color: #000;
+  background-color: black;
   margin: 0 auto;
 }
 
-/* 商品セクション */
+/* PRODUCTS */
 .product-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0; /* 商品同士の隙間ゼロ */
-  padding: 0 40px 80px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0px;
+  padding: 30px 10px;
 }
 
-/* 商品カード */
 .product-card {
   background-color: #FAFAFA;
+  padding: 10px;
   text-align: center;
-  padding: 10px 0;
 }
 
 .product-card img {
@@ -103,15 +101,19 @@ body {
   display: block;
 }
 
-/* 商品情報（名前・価格・NEW） */
-.product-name,
-.product-price,
-.product-new {
-  margin: 4px 0; /* 縦の隙間を調整 */
-  font-size: 13px; /* 元のサイズから -5 */
+.product-name {
+  font-size: 13px;
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+.product-price {
+  font-size: 13px;
+  margin-bottom: 2px;
 }
 
 .product-new {
-  color: #000;
-  font-weight: normal;
+  font-size: 13px;
+  color: black;
+  margin-bottom: 0;
 }
