@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GIGI Tokyo - 2025 SPRING/SUMMER</title>
   <link rel="stylesheet" href="2025-spring-summer.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- HEADER -->
-  <header class="top-bar">
-    <div class="menu-items">
-      <a href="2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
-      <a href="2025-spring-summer.html">2025 SPRING/SUMMER</a>
-      <a href="information.html">INFORMATION</a>
-      <a href="contact.html">CONTACT</a>
+  <header class="top-bar" id="topBar">
+    <div class="menu" id="menuBtn">
+      MENU
+      <div class="menu-items" id="menuItems">
+        <a href="2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
+        <a href="2025-spring-summer.html">2025 SPRING/SUMMER</a>
+        <a href="information.html">INFORMATION</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
     </div>
     <div class="logo">
       <a href="index.html">GIGI Tokyo</a>
@@ -23,47 +26,48 @@
   </header>
 
   <!-- TITLE -->
-  <h1 class="title">2025 SPRING/SUMMER</h1>
-  <div class="title-border"></div>
+  <section class="collection-title">
+    <h1 class="collection-heading">2025 SPRING/SUMMER</h1>
+    <div class="underline"></div>
+  </section>
 
-  <!-- PRODUCT SECTION -->
+  <!-- PRODUCTS -->
   <section class="product-section">
     <div class="product-card">
       <img src="images/product1.jpg" alt="Flare Mini Skirt">
-      <div class="product-info">
-        <p>Flare Mini Skirt</p>
-        <p>¥0</p>
-        <span>NEW</span>
-      </div>
+      <p class="product-name">Flare Mini Skirt</p>
+      <p class="product-price">¥0</p>
+      <p class="product-new">NEW</p>
     </div>
-
     <div class="product-card">
       <img src="images/product2.jpg" alt="Sharp Bustier Top">
-      <div class="product-info">
-        <p>Sharp Bustier Top</p>
-        <p>¥0</p>
-        <span>NEW</span>
-      </div>
+      <p class="product-name">Sharp Bustier Top</p>
+      <p class="product-price">¥0</p>
+      <p class="product-new">NEW</p>
     </div>
-
     <div class="product-card">
       <img src="images/product3.jpg" alt="Distressed Knit Sweater">
-      <div class="product-info">
-        <p>Distressed Knit Sweater</p>
-        <p>¥0</p>
-        <span>NEW</span>
-      </div>
+      <p class="product-name">Distressed Knit Sweater</p>
+      <p class="product-price">¥0</p>
+      <p class="product-new">NEW</p>
     </div>
-
     <div class="product-card">
       <img src="images/product4.jpg" alt="Lace Layer Skirt">
-      <div class="product-info">
-        <p>Lace Layer Skirt</p>
-        <p>¥0</p>
-        <span>NEW</span>
-      </div>
+      <p class="product-name">Lace Layer Skirt</p>
+      <p class="product-price">¥0</p>
+      <p class="product-new">NEW</p>
     </div>
   </section>
+
+  <!-- SCRIPT -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menuItems = document.getElementById('menuItems');
+
+    menuBtn.addEventListener('click', () => {
+      menuItems.style.display = menuItems.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
 
 </body>
 </html>
