@@ -6,49 +6,11 @@
   <title>GIGI Tokyo - 2025 SPRING/SUMMER</title>
   <link rel="stylesheet" href="2025-spring-summer.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-  <style>
-    .logo a {
-      color: black;
-      text-decoration: none;
-    }
-
-    .collection-title {
-      font-size: 55px;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 60px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .black-line {
-      border-top: 3px solid black;
-      margin: 20px auto;
-      width: 90%;
-    }
-
-    .product-image img {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-    }
-
-    .product-card {
-      display: inline-block;
-      width: 22%;
-      margin: 1.5%;
-      vertical-align: top;
-      text-align: center;
-    }
-
-    .product-section {
-      text-align: center;
-    }
-  </style>
 </head>
-<body id="spring-summer-2025">
+<body>
 
   <!-- HEADER -->
-  <header class="top-bar" id="topBar">
+  <header class="top-bar">
     <div class="menu" id="menuBtn">
       MENU
       <div class="menu-items" id="menuItems">
@@ -58,79 +20,39 @@
         <a href="contact.html">CONTACT</a>
       </div>
     </div>
-    <div class="logo" id="logo"><a href="index.html">GIGI Tokyo</a></div>
+    <div class="logo"><a href="index.html">GIGI Tokyo</a></div>
   </header>
 
-  <!-- COLLECTION TITLE -->
-  <div class="collection-title">2025 SPRING/SUMMER</div>
-  <div class="black-line"></div>
+  <h2 class="season-title">2025 SPRING/SUMMER</h2>
+  <hr class="title-line" />
 
-  <!-- PRODUCT SECTION -->
+  <!-- PRODUCTS -->
   <section class="product-section">
     <div class="product-card">
-      <div class="product-image">
-        <img src="images/product1-front.jpg" alt="Flare Mini Skirt" class="main-img">
-        <img src="images/product1-back.jpg" alt="Back view" class="hover-img">
-      </div>
-      <div class="product-info">
-        <p>Flare Mini Skirt</p>
-        <p>&yen;0</p>
-        <span>NEW</span>
-      </div>
+      <img src="images/product1-front.jpg" alt="Flare Mini Skirt">
+      <p class="name">Flare Mini Skirt</p>
+      <p class="price">¥0</p>
+      <p class="new">NEW</p>
     </div>
-
     <div class="product-card">
-      <div class="product-image">
-        <img src="images/product2-front.jpg" alt="Sharp Bustier Top" class="main-img">
-        <img src="images/product2-back.jpg" alt="Back view" class="hover-img">
-      </div>
-      <div class="product-info">
-        <p>Sharp Bustier Top</p>
-        <p>&yen;0</p>
-        <span>NEW</span>
-      </div>
+      <img src="images/product2-front.jpg" alt="Sharp Bustier Top">
+      <p class="name">Sharp Bustier Top</p>
+      <p class="price">¥0</p>
+      <p class="new">NEW</p>
     </div>
-
     <div class="product-card">
-      <div class="product-image">
-        <img src="images/product3-front.jpg" alt="Distressed Knit Sweater" class="main-img">
-        <img src="images/product3-back.jpg" alt="Back view" class="hover-img">
-      </div>
-      <div class="product-info">
-        <p>Distressed Knit Sweater</p>
-        <p>&yen;0</p>
-        <span>NEW</span>
-      </div>
+      <img src="images/product3-front.jpg" alt="Distressed Knit Sweater">
+      <p class="name">Distressed Knit Sweater</p>
+      <p class="price">¥0</p>
+      <p class="new">NEW</p>
     </div>
-
     <div class="product-card">
-      <div class="product-image">
-        <img src="images/product4-front.jpg" alt="Lace Layer Skirt" class="main-img">
-        <img src="images/product4-back.jpg" alt="Back view" class="hover-img">
-      </div>
-      <div class="product-info">
-        <p>Lace Layer Skirt</p>
-        <p>&yen;0</p>
-        <span>NEW</span>
-      </div>
+      <img src="images/product4-front.jpg" alt="Lace Layer Skirt">
+      <p class="name">Lace Layer Skirt</p>
+      <p class="price">¥0</p>
+      <p class="new">NEW</p>
     </div>
   </section>
-
-  <!-- SCRIPT -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const menuItems = document.getElementById('menuItems');
-    const logo = document.getElementById('logo');
-
-    menuBtn.addEventListener('click', () => {
-      menuItems.style.display = menuItems.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    window.addEventListener('scroll', () => {
-      const opacity = 1 - Math.min(window.scrollY / 300, 1);
-      logo.style.opacity = opacity;
-    });
-  </script>
 
 </body>
 </html>
