@@ -22,7 +22,7 @@ body {
 
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 29px;
   font-weight: bold;
   color: #fff;
   text-shadow: 0 0 8px rgba(0,0,0,0.5);
@@ -81,14 +81,7 @@ body {
 }
 
 .hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-  font-size: 16px;
+  display: none;
 }
 
 /* フッター */
@@ -103,7 +96,7 @@ footer {
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .logo {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .hero-text {
