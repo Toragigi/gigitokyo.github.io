@@ -99,7 +99,7 @@ body {
   justify-content: flex-start;
   gap: 80px;
   padding-left:80px;
-  transform: translateX(-200px) translateY(-70px); /* 左に12文字分、上に4文字分 */
+  transform: translateX(-300px) translateY(-100px); /* 左に12文字分、上に4文字分 */
 }
 
 .footer-column {
