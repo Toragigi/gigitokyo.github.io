@@ -86,32 +86,24 @@ body {
 
 /* フッター */
 .footer {
-  background-color: #ffffff;
-  padding: 30px 20px 10px;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 14px;
-  color: #000000;
-  margin-top: 60px;
+  background-color: #fff;
+  padding: 60px 80px 20px 80px;
+  font-family: 'Helvetica Neue', sans-serif; /* MENUと統一 */
+  color: #000;
 }
 
-.footer-links {
+.footer-columns {
   display: flex;
   justify-content: flex-start;
-  gap: 80px;
-  padding-left:80px;
-  transform: translateX(-300px) translateY(-100px); /* 左に12文字分、上に4文字分 */
+  gap: 120px; /* SupportとLegalの間隔：約12文字分 */
+  margin-bottom: 30px;
+  transform: translateY(-20px); /* 上に約4文字分移動 */
 }
 
-.footer-column {
-  text-align: left;
-}
-
-.footer-heading {
-  font-size: 19px; /* +5px */
+.footer-column h3 {
+  font-size: 20px; /* +5サイズ程度 */
   font-weight: bold;
-  margin-bottom: 12px;
-  color: #000000;
-  font-family: 'Noto Sans JP', sans-serif;
+  margin-bottom: 10px;
 }
 
 .footer-column ul {
@@ -121,28 +113,20 @@ body {
 }
 
 .footer-column ul li {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .footer-column ul li a {
   text-decoration: none;
-  color: #000000;
-  font-weight: 400;
+  color: #000;
+  font-size: 14px;
 }
 
-.footer-column ul li a:hover {
-  text-decoration: underline;
-}
-
-.legal {
-  margin-left: 100px; /* 12文字分の余白調整 */
-}
-
-footer p {
+.footer-bottom {
   text-align: center;
-  margin-top: 40px;
-  font-size: 13px;
-  color: #444;
+  font-size: 12px;
+  margin-top: 20px;
+  color: #555;
 }
 
 /* レスポンシブ対応 */
