@@ -4,34 +4,104 @@
   <meta charset="UTF-8">
   <title>Contact | GIGI Tokyo</title>
   <style>
-    .legal-page {
-      max-width: 800px;
-      margin: 100px auto;
-      padding: 0 20px;
+    body {
       font-family: 'Noto Sans JP', sans-serif;
-      font-size: 14.5px;
-      line-height: 1.9;
-      color: #000;
       background-color: #fff;
+      color: #000;
+      margin: 0;
+      padding: 0;
     }
 
-    .legal-page h2 {
+    .contact-container {
+      max-width: 700px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
       font-size: 24px;
-      margin-bottom: 20px;
       font-weight: 600;
+      margin-bottom: 20px;
       text-align: center;
     }
 
-    .legal-page p {
-      margin-bottom: 16px;
+    .contact-description {
+      font-size: 14.5px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 150px;
+    }
+
+    button {
+      background-color: #000;
+      color: #fff;
+      padding: 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    @media (max-width: 600px) {
+      .contact-container {
+        margin: 60px 15px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="legal-page">
+  <div class="contact-container">
     <h2>Contact</h2>
-    <p>ご質問・ご意見は info@gigitokyo.jp にお問い合わせください。</p>
+    <p class="contact-description">
+      GIGI Tokyoをご利用頂きありがとうございます。<br>
+      各種お問い合わせは下記のフォームよりご連絡ください。<br>
+      内容によっては回答をさしあげるのにお時間をいただくこともございます。<br>
+      また、休業日は翌営業日以降の対応となりますのでご了承ください。<br>
+      メールアドレスに誤りがある場合はご回答が出来かねますので、誤入力にはお気を付けくださいますようお願い致します。
+    </p>
+
+    <form action="mailto:info@gigitokyo.jp" method="POST" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">SEND</button>
+    </form>
   </div>
 </body>
 </html>
-
