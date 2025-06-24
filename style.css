@@ -45,7 +45,7 @@ body {
   position: absolute;
   top: 30px;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   color: #fff;
   padding: 10px 15px;
   display: none;
@@ -80,28 +80,24 @@ body {
   display: block;
 }
 
-.hero-text {
-  display: none;
-}
-
-/* フッター */
+/* FOOTER */
 .footer {
   background-color: #fff;
   padding: 60px 80px 20px 80px;
-  font-family: 'Helvetica Neue', sans-serif; /* MENUと統一 */
+  font-family: 'Helvetica Neue', sans-serif;
   color: #000;
 }
 
 .footer-columns {
   display: flex;
   justify-content: flex-start;
-  gap: 120px; /* SupportとLegalの間隔：約12文字分 */
+  gap: 120px;
   margin-bottom: 30px;
-  transform: translateY(-20px); /* 上に約4文字分移動 */
+  transform: translateY(-20px);
 }
 
 .footer-column h3 {
-  font-size: 20px; /* +5サイズ程度 */
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #000;
@@ -121,6 +117,11 @@ body {
   text-decoration: none;
   color: #000;
   font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  opacity: 0.6;
 }
 
 .footer-bottom {
@@ -136,10 +137,40 @@ body {
     font-size: 25px;
   }
 
-  .hero-text {
+  .menu {
     font-size: 14px;
+  }
+
+  .footer {
+    padding: 40px 30px 20px 30px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+    transform: none;
+  }
+
+  .footer-column h3 {
+    font-size: 18px;
+  }
+
+  .footer-column ul li a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-columns {
+    gap: 30px;
   }
 
   .menu {
     font-size: 12px;
   }
+
+  .logo {
+    font-size: 20px;
+  }
+}
