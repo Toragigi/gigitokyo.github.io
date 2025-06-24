@@ -3,20 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>Legal Notice | GIGI Tokyo</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- 埋め込むCSS -->
+  <style>
+    .legal-page {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 0 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #000;
+      background-color: #fff;
+    }
+
+    .legal-page h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .legal-page h3 {
+      font-size: 18px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .legal-page p {
+      margin-bottom: 16px;
+    }
+
+    .legal-page ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .legal-page li {
+      margin-bottom: 8px;
+      list-style-type: disc;
+    }
+
+    @media (max-width: 600px) {
+      .legal-page {
+        margin: 60px 15px;
+        font-size: 13.5px;
+      }
+
+      .legal-page h2 {
+        font-size: 20px;
+      }
+
+      .legal-page h3 {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1 class="logo">GIGI Tokyo</h1>
-  </header>
-
-  <main class="legal-page">
+  <div class="legal-page">
     <h2>Legal Notice</h2>
-    <p>（ここに表記内容を入れます）</p>
-  </main>
-
-  <footer>
-    <p>© 2025 GIGI Tokyo. All rights reserved.</p>
-  </footer>
+    <!-- 以下、本文内容 -->
+  </div>
 </body>
 </html>
