@@ -85,49 +85,53 @@ body {
 }
 
 /* フッター */
-.footer {
+footer {
   background-color: #fff;
-  padding: 60px 80px 20px 80px;
-  font-family: 'Helvetica Neue', sans-serif; /* MENUと統一 */
-  color: #000;
+  padding: 40px 0 20px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
 }
 
-.footer-columns {
+.footer-links {
   display: flex;
-  justify-content: flex-start;
-  gap: 120px; /* SupportとLegalの間隔：約12文字分 */
-  margin-bottom: 30px;
-  transform: translateY(-20px); /* 上に約4文字分移動 */
+  justify-content: center;
+  gap: 80px; /* SupportとLegalの間隔 */
+  margin-top: -40px; /* 上に4文字分ほど上昇 */
 }
 
-.footer-column h3 {
-  font-size: 20px; /* +5サイズ程度 */
+.footer-section {
+  text-align: left;
+}
+
+.footer-section h4 {
+  font-size: 17px; /* +5調整済み */
+  color: #000;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.footer-column ul {
+.footer-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-column ul li {
+.footer-section ul li {
   margin-bottom: 6px;
 }
 
-.footer-column ul li a {
-  text-decoration: none;
+.footer-section ul li a {
   color: #000;
+  text-decoration: none;
   font-size: 14px;
 }
 
-.footer-bottom {
-  text-align: center;
+.footer-copy {
+  margin-top: 40px;
   font-size: 12px;
-  margin-top: 20px;
-  color: #555;
+  color: #666;
 }
+
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
