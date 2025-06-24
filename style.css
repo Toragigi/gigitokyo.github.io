@@ -85,26 +85,32 @@ body {
 }
 
 /* フッター */
-footer {
-  background-color: #fff;
-  padding: 60px 0 20px 0;
-  color: #000;
+.footer {
+  background-color: #ffffff;
+  padding: 30px 20px 10px;
   font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  margin-top: 60px;
 }
 
-.footer-container {
+.footer-links {
   display: flex;
-  justify-content: flex-start;
-  gap: 80px; /* SupportとLegalの間隔 */
-  padding-left: 80px; /* ← 左に約12文字分移動（80px = 約12文字） */
-  transform: translateY(-5px); /* 上に約1文字分移動 */
+  justify-content: center;
+  gap: 120px;
+  transform: translateY(-36px); /* 上に3文字分 */
 }
 
-.footer-column h4 {
-  font-size: 18px; /* デフォルト +5px */
+.footer-column {
+  text-align: left;
+}
+
+.footer-heading {
+  font-size: 19px; /* +5px */
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #000;
+  margin-bottom: 12px;
+  color: #000000;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .footer-column ul {
@@ -114,26 +120,28 @@ footer {
 }
 
 .footer-column ul li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .footer-column ul li a {
   text-decoration: none;
-  color: #000;
-  font-size: 14px;
+  color: #000000;
+  font-weight: 400;
 }
 
 .footer-column ul li a:hover {
-  opacity: 0.7;
+  text-decoration: underline;
 }
 
-footer .copyright {
+.legal {
+  margin-left: 120px; /* 12文字分の余白調整 */
+}
+
+footer p {
   text-align: center;
   margin-top: 40px;
-  font-size: 12px;
-  color: #555;
-}
-
+  font-size: 13px;
+  color: #444;
 }
 
 /* レスポンシブ対応 */
