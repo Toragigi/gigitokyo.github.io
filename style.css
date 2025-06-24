@@ -98,7 +98,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 120px;
-  transform: translateX(-120px) translateY(-48px); /* 左に12文字分、上に4文字分 */
+  transform: translateX(-150px) translateY(-60px); /* 左に12文字分、上に4文字分 */
 }
 
 .footer-column {
@@ -134,7 +134,7 @@ body {
 }
 
 .legal {
-  margin-left: 120px; /* 12文字分の余白調整 */
+  margin-left: 100px; /* 12文字分の余白調整 */
 }
 
 footer p {
