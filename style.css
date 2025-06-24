@@ -96,8 +96,9 @@ body {
 
 .footer-links {
   display: flex;
-  justify-content: center;
-  gap: 120px;
+  justify-content: flex-start;
+  gap: 80px;
+  padding-left:80px;
   transform: translateX(-200px) translateY(-70px); /* 左に12文字分、上に4文字分 */
 }
 
