@@ -4,15 +4,20 @@
   <meta charset="UTF-8">
   <title>Privacy Policy | GIGI Tokyo</title>
   <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #fff;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
     .legal-page {
       max-width: 800px;
       margin: 100px auto;
       padding: 0 20px;
-      font-family: 'Noto Sans JP', sans-serif;
       font-size: 14.5px;
       line-height: 1.9;
-      color: #000;
-      background-color: #fff;
     }
 
     .legal-page h2 {
@@ -43,7 +48,57 @@
       list-style-type: disc;
     }
 
-    @media (max-width: 600px) {
+    footer.footer {
+      background-color: #fff;
+      padding: 60px 80px 20px 80px;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #000;
+    }
+
+    .footer-columns {
+      display: flex;
+      justify-content: flex-start;
+      gap: 120px;
+      margin-bottom: 30px;
+      transform: translateY(-20px);
+    }
+
+    .footer-column h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 6px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-column ul li a:hover {
+      opacity: 0.6;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 20px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
       .legal-page {
         margin: 60px 15px;
         font-size: 13.5px;
@@ -55,6 +110,31 @@
 
       .legal-page h3 {
         font-size: 16px;
+      }
+
+      .footer {
+        padding: 40px 30px 20px 30px;
+      }
+
+      .footer-columns {
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+        transform: none;
+      }
+
+      .footer-column h3 {
+        font-size: 18px;
+      }
+
+      .footer-column ul li a {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-columns {
+        gap: 30px;
       }
     }
   </style>
@@ -165,6 +245,29 @@
     <p>
       本ポリシーは、ユーザーへの事前通知なしに変更されることがあります。変更後は、本ウェブサイト上に掲載された時点で効力を生じます。
     </p>
-</div> <!-- ← ここが必要 -->
-</body>
+</div> 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-column support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="/legal/information.html">Information</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column legal">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/legal/legal-notice.html">Legal Notice</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 GIGI Tokyo. All rights reserved.</p>
+    </div>
+  </footer>
+</body><!-- ← ここが必要 -->
 </html>
