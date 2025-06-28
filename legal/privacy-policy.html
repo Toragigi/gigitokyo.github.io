@@ -38,6 +38,16 @@
       margin-bottom: 16px;
     }
 
+    .legal-page ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .legal-page li {
+      margin-bottom: 8px;
+      list-style-type: disc;
+    }
+
     footer.footer {
       background-color: #fff;
       padding: 60px 80px 20px 80px;
@@ -47,8 +57,7 @@
 
     .footer-columns {
       display: flex;
-      justify-content: flex-start;
-      gap: 120px;
+      justify-content: space-between;
       margin-bottom: 30px;
       transform: translateY(-20px);
     }
@@ -83,7 +92,6 @@
 
     .footer-column.back-to-top {
       margin-left: auto;
-      text-align: right;
     }
 
     .footer-bottom {
@@ -99,6 +107,14 @@
         font-size: 13.5px;
       }
 
+      .legal-page h2 {
+        font-size: 20px;
+      }
+
+      .legal-page h3 {
+        font-size: 16px;
+      }
+
       .footer {
         padding: 40px 30px 20px 30px;
       }
@@ -110,15 +126,24 @@
         transform: none;
       }
 
-      .footer-column.back-to-top {
-        text-align: left;
-        margin-left: 0;
+      .footer-column h3 {
+        font-size: 18px;
+      }
+
+      .footer-column ul li a {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-columns {
+        gap: 30px;
       }
     }
   </style>
 </head>
 <body>
-    <h2>Privacy Policy</h2>
+  <div class="legal-page">
 
     <p>GIGI Tokyo（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</p>
 
@@ -222,23 +247,22 @@
     <p>
       本ポリシーは、ユーザーへの事前通知なしに変更されることがあります。変更後は、本ウェブサイト上に掲載された時点で効力を生じます。
     </p>
-</div> 
-  <!-- FOOTER -->
+</div>
   <footer class="footer">
     <div class="footer-columns">
       <div class="footer-column support">
         <h3>Support</h3>
         <ul>
-          <li><a href="information.html">Information</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/legal/information.html">Information</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-column legal">
         <h3>Legal</h3>
         <ul>
-          <li><a href="legal-notice.html">Legal Notice</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="/legal/legal-notice.html">Legal Notice</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms-of-service.html">Terms of Service</a></li>
         </ul>
       </div>
       <div class="footer-column back-to-top">
