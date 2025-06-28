@@ -13,7 +13,7 @@
   <!-- HEADER -->
   <header class="top-bar">
     <div class="menu" id="menuBtn">MENU
-      <div class="menu-items" id="menuItems">
+      <div class="menu-items">
         <a href="2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
         <a href="2025-spring-summer.html">2025 SPRING/SUMMER</a>
         <a href="legal/collection.html">COLLECTION</a>
@@ -59,7 +59,6 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const menuBtn = document.getElementById("menuBtn");
-      const logo = document.getElementById("logo");
 
       menuBtn.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -70,11 +69,6 @@
         if (!menuBtn.contains(e.target)) {
           menuBtn.classList.remove("active");
         }
-      });
-
-      window.addEventListener("scroll", () => {
-        const opacity = 1 - Math.min(window.scrollY / 300, 1);
-        logo.style.opacity = opacity;
       });
     });
   </script>
