@@ -3,50 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GIGI Tokyo</title>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <title>2025 COLLECTION | GIGI Tokyo</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- HEADER -->
+  <!-- ヘッダー -->
   <header class="top-bar">
     <div class="menu" id="menuBtn">MENU
-      <div class="menu-items">
+      <div class="menu-items" id="menuItems">
         <a href="2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
         <a href="2025-spring-summer.html">2025 SPRING/SUMMER</a>
-        <a href="legal/collection.html">COLLECTION</a>
-        <a href="legal/collaboration.html">COLLABORATION</a>
+        <a href="collection.html">COLLECTION</a>
+        <a href="collaboration.html">COLLABORATION</a>
       </div>
     </div>
-
-    <div class="logo center-logo" id="logo">
+    <div class="logo center-logo">
       <a href="index.html">GIGI Tokyo</a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <img src="images/gigi-photo-main-hp.JPG" alt="Main Visual" />
+  <!-- タイトル -->
+  <section class="collection-title">
+    <h2 class="collection-heading">2025 COLLECTION</h2>
+    <div class="underline"></div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- コレクション画像 -->
+  <section class="collection-images">
+    <div class="collection-image center">
+      <img src="images/collection1.jpg" alt="Collection 1" />
+    </div>
+    <div class="collection-image left">
+      <img src="images/collection2.jpg" alt="Collection 2" />
+    </div>
+    <div class="collection-image right">
+      <img src="images/collection3.jpg" alt="Collection 3" />
+    </div>
+    <div class="collection-image left">
+      <img src="images/collection4.jpg" alt="Collection 4" />
+    </div>
+    <div class="collection-image right">
+      <img src="images/collection5.jpg" alt="Collection 5" />
+    </div>
+  </section>
+
+  <!-- フッター -->
   <footer class="footer">
     <div class="footer-columns">
       <div class="footer-column support">
         <h3>Support</h3>
         <ul>
-          <li><a href="legal/information.html">Information</a></li>
-          <li><a href="legal/contact.html">Contact</a></li>
+          <li><a href="information.html">Information</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-column legal">
         <h3>Legal</h3>
         <ul>
-          <li><a href="legal/legal-notice.html">Legal Notice</a></li>
-          <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="legal-notice.html">Legal Notice</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-column back-to-top">
+        <ul>
+          <li><a href="index.html">トップに戻る</a></li>
         </ul>
       </div>
     </div>
@@ -55,16 +77,13 @@
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- メニュー動作スクリプト -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const menuBtn = document.getElementById("menuBtn");
-
-      menuBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
+      menuBtn.addEventListener("click", function () {
         menuBtn.classList.toggle("active");
       });
-
       document.addEventListener("click", function (e) {
         if (!menuBtn.contains(e.target)) {
           menuBtn.classList.remove("active");
@@ -72,6 +91,5 @@
       });
     });
   </script>
-
 </body>
 </html>
