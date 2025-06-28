@@ -171,3 +171,36 @@ body {
   margin-top: 20px;
   color: #555;
 }
+/* MENU */
+.menu {
+  font-size: 16px;
+  color: #000;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  margin-right: auto;
+}
+
+.menu-items {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 10px 15px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 999;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.menu:hover .menu-items {
+  display: flex;
+}
