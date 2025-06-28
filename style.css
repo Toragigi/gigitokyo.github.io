@@ -193,6 +193,6 @@ body {
   max-height: 85vh; /* 画面の85%を最大に制限 */
   object-fit: cover;
   display: block;
-  margin-top: 140px; /* ヘッダーの高さ分だけ下げる */
+  margin-top: 0px; /* ヘッダーの高さ分だけ下げる */
 }
 
