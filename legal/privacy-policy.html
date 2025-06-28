@@ -47,7 +47,105 @@
       margin-bottom: 8px;
       list-style-type: disc;
     }
+
+    footer.footer {
+      background-color: #fff;
+      padding: 60px 80px 20px 80px;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #000;
+    }
+
+    .footer-columns {
+      display: flex;
+      justify-content: flex-start;
+      gap: 120px;
+      margin-bottom: 30px;
+      transform: translateY(-20px);
+    }
+
+    .footer-column h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 6px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-column ul li a:hover {
+      opacity: 0.6;
+    }
+
+    .footer-bottom {
+      text-align: right;
+      font-size: 12px;
+      margin-top: 20px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .legal-page {
+        margin: 60px 15px;
+        font-size: 13.5px;
+      }
+
+      .legal-page h2 {
+        font-size: 20px;
+      }
+
+      .legal-page h3 {
+        font-size: 16px;
+      }
+
+      .footer {
+        padding: 40px 30px 20px 30px;
+      }
+
+      .footer-columns {
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+        transform: none;
+      }
+
+      .footer-column h3 {
+        font-size: 18px;
+      }
+
+      .footer-column ul li a {
+        font-size: 13px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-columns {
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
   <div class="legal-page">
+    <h2>Privacy Policy</h2>
 
     <p>GIGI Tokyo（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</p>
 
@@ -152,110 +250,7 @@
       本ポリシーは、ユーザーへの事前通知なしに変更されることがあります。変更後は、本ウェブサイト上に掲載された時点で効力を生じます。
     </p>
 </div>
- footer.footer {
-      background-color: #fff;
-      padding: 60px 80px 20px 80px;
-      font-family: 'Helvetica Neue', sans-serif;
-      color: #000;
-    }
-
-    .footer-columns {
-      display: flex;
-      justify-content: flex-start;
-      gap: 120px;
-      margin-bottom: 30px;
-      transform: translateY(-20px);
-    }
-
-    .footer-column h3 {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #000;
-    }
-
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-column ul li {
-      margin-bottom: 6px;
-    }
-
-    .footer-column ul li a {
-      text-decoration: none;
-      color: #000;
-      font-size: 14px;
-      transition: opacity 0.3s ease;
-    }
-
-    .footer-column ul li a:hover {
-      opacity: 0.6;
-    }
-
-    .footer-column.back-to-top {
-      margin-left: auto;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      font-size: 12px;
-      margin-top: 20px;
-      color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .legal-page {
-        margin: 60px 15px;
-        font-size: 13.5px;
-      }
-
-      .legal-page h2 {
-        font-size: 20px;
-      }
-
-      .legal-page h3 {
-        font-size: 16px;
-      }
-
-      .footer {
-        padding: 40px 30px 20px 30px;
-      }
-
-      .footer-columns {
-        flex-direction: column;
-        gap: 40px;
-        align-items: flex-start;
-        transform: none;
-      }
-
-      .footer-column h3 {
-        font-size: 18px;
-      }
-
-      .footer-column ul li a {
-        font-size: 13px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .footer-columns {
-        gap: 30px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="legal-page">
-    <h2>Privacy Policy</h2>
-    <!-- 以下、本文はそのまま貼り付け済み -->
-    <p>GIGI Tokyo（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス…</p>
-    <!-- 中略：文章はご指定通り一切変更していません -->
-  </div>
-
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-columns">
       <div class="footer-column support">
         <h3>Support</h3>
@@ -272,13 +267,9 @@
           <li><a href="/legal/terms-of-service.html">Terms of Service</a></li>
         </ul>
       </div>
-      <div class="footer-column back-to-top">
-        <ul>
-          <li><a href="/index.html">トップに戻る</a></li>
-        </ul>
-      </div>
     </div>
     <div class="footer-bottom">
+      <a href="/index.html">トップに戻る</a><br>
       <p>© 2025 GIGI Tokyo. All rights reserved.</p>
     </div>
   </footer>
