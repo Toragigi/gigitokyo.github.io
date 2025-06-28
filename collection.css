@@ -74,7 +74,7 @@ body {
     max-width: 90%;
   }
 }
-/* ===== HEADER 共通スタイル ===== */
+/* HEADER */
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -135,7 +135,7 @@ body {
   width: 100%;
 }
 
-/* ===== FOOTER 共通スタイル ===== */
+/* FOOTER */
 .footer {
   background-color: #fff;
   padding: 60px 80px 20px 80px;
@@ -189,31 +189,4 @@ body {
   font-size: 12px;
   margin-top: 20px;
   color: #555;
-}
-
-/* ===== フッター レスポンシブ対応 ===== */
-@media (max-width: 768px) {
-  .footer {
-    padding: 40px 30px 20px 30px;
-  }
-
-  .footer-columns {
-    flex-direction: column;
-    gap: 40px;
-    align-items: flex-start;
-    transform: none;
-  }
-
-  .footer-column h3 {
-    font-size: 18px;
-  }
-
-  .footer-column ul li a {
-    font-size: 13px;
-  }
-
-  .footer-column.back-to-top {
-    margin-left: 0;
-    text-align: left;
-  }
 }
