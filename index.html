@@ -4,42 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GIGI Tokyo</title>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />  <!-- ← この行を追加 -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
- <!-- HEADER -->
-<header class="top-bar">
-  <div class="menu" id="menuBtn">MENU
-    <div class="menu-items" id="menuItems">
-      <a href="2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
-      <a href="2025-spring-summer.html">2025 SPRING/SUMMER</a>
-      <a href="legal/collection.html">COLLECTION</a>
-      <a href="legal/collaboration.html">COLLABORATION</a>
+  <!-- HEADER -->
+  <header class="top-bar">
+    <div class="menu" id="menuBtn">MENU
+      <div class="menu-items" id="menuItems">
+        <a href="2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
+        <a href="2025-spring-summer.html">2025 SPRING/SUMMER</a>
+        <a href="legal/collection.html">COLLECTION</a>
+        <a href="legal/collaboration.html">COLLABORATION</a>
+      </div>
     </div>
-  </div>
 
-  <div class="logo center-logo">
-    <a href="index.html">GIGI Tokyo</a>
-  </div>
-</header>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuBtn = document.getElementById("menuBtn");
-    menuBtn.addEventListener("click", function () {
-      menuBtn.classList.toggle("active");
-    });
-    document.addEventListener("click", function (e) {
-      if (!menuBtn.contains(e.target)) {
-        menuBtn.classList.remove("active");
-      }
-    });
-  });
-</script>
-
+    <div class="logo center-logo" id="logo">
+      <a href="index.html">GIGI Tokyo</a>
+    </div>
+  </header>
 
   <!-- HERO SECTION -->
   <section class="hero">
@@ -72,17 +57,26 @@
 
   <!-- SCRIPT -->
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const menuItems = document.getElementById('menuItems');
-    const logo = document.getElementById('logo');
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.getElementById("menuBtn");
+      const menuItems = document.getElementById("menuItems");
+      const logo = document.getElementById("logo");
 
-    menuBtn.addEventListener('click', () => {
-      menuItems.style.display = menuItems.style.display === 'flex' ? 'none' : 'flex';
-    });
+      menuBtn.addEventListener("click", function (e) {
+        e.stopPropagation(); // 他のクリックイベントを阻止
+        menuBtn.classList.toggle("active");
+      });
 
-    window.addEventListener('scroll', () => {
-      const opacity = 1 - Math.min(window.scrollY / 300, 1);
-      logo.style.opacity = opacity;
+      document.addEventListener("click", function (e) {
+        if (!menuBtn.contains(e.target)) {
+          menuBtn.classList.remove("active");
+        }
+      });
+
+      window.addEventListener("scroll", () => {
+        const opacity = 1 - Math.min(window.scrollY / 300, 1);
+        logo.style.opacity = opacity;
+      });
     });
   </script>
 
