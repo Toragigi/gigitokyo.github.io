@@ -57,10 +57,15 @@
 
     .footer-columns {
       display: flex;
-      justify-content: flex-start;
-      gap: 120px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
       margin-bottom: 30px;
       transform: translateY(-20px);
+    }
+
+    .footer-column {
+      min-width: 120px;
     }
 
     .footer-column h3 {
@@ -98,6 +103,12 @@
       color: #555;
     }
 
+    /* トップに戻る用：最右端配置 */
+    .back-to-top {
+      margin-left: auto;
+      text-align: right;
+    }
+
     @media (max-width: 768px) {
       .legal-page {
         margin: 60px 15px;
@@ -129,6 +140,11 @@
 
       .footer-column ul li a {
         font-size: 13px;
+      }
+
+      .back-to-top {
+        text-align: left;
+        margin-left: 0;
       }
     }
 
@@ -162,9 +178,7 @@
     <p>ご注文確認後、通常1〜3営業日以内（土・日・祝日を除く）に発送いたします。<br>ただし、在庫状況によりキャンセルとなる場合や、繁忙期には配送に遅れが生じることがございます。その際は、個別にご連絡させていただきます。</p>
 
     <h3>不良品の対応について</h3>
-    <p>
-      商品到着後は速やかに内容をご確認ください。万が一、不良品が届いた場合は、到着日より7日以内にご返送をお願いいたします。以下のような場合には、当店にて送料を負担し、至急交換対応をさせていただきます。
-    </p>
+    <p>商品到着後は速やかに内容をご確認ください。万が一、不良品が届いた場合は、到着日より7日以内にご返送をお願いいたします。以下のような場合には、当店にて送料を負担し、至急交換対応をさせていただきます。</p>
     <ul>
       <li>商品に損傷や汚れがある場合</li>
       <li>ご注文内容と異なる商品が届いた場合</li>
@@ -221,35 +235,37 @@
       <li>その他決済手数料（該当する場合）</li>
     </ul>
   </div>
-  
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-columns">
-    <div class="footer-column support">
-      <h3>Support</h3>
-      <ul>
-        <li><a href="/legal/information.html">Information</a></li>
-        <li><a href="/legal/contact.html">Contact</a></li>
-      </ul>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-column support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="/legal/information.html">Information</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column legal">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/legal/legal-notice.html">Legal Notice</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column back-to-top">
+        <ul>
+          <li><a href="/index.html">トップに戻る</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="footer-column legal">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="/legal/legal-notice.html">Legal Notice</a></li>
-        <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/legal/terms-of-service.html">Terms of Service</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>© 2025 GIGI Tokyo. All rights reserved.</p>
     </div>
-
-    <div class="footer-column back-to-top">
-      <ul>
-        <li><a href="/index.html">トップに戻る</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2025 GIGI Tokyo. All rights reserved.</p>
-  </div>
-</footer>
+  </footer>
+</body>
+</html>
