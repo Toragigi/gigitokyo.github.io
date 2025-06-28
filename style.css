@@ -186,3 +186,12 @@ body {
   margin-top: 20px;
   color: #555;
 }
+/* HERO IMAGE */
+.hero img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh; /* 画面の85%を最大に制限 */
+  object-fit: cover;
+  display: block;
+}
+
