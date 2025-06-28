@@ -1,28 +1,24 @@
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  background-color: #FAFAFA;
+  background-color: #FAFAFA; /* 統一背景色 */
   margin: 0;
   padding: 0;
 }
 
-/* HEADER */
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: white;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  border-bottom: 1px solid #ccc;
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+}
+
+/* 追加：中央揃え用クラス */
+.center-logo {
+  flex: 1;
+  text-align: center;
 }
 
 .logo a {
   text-decoration: none;
   color: black;
-  font-family: 'Playfair Display', serif;
-  font-size: 35px;
 }
 
 .menu {
