@@ -1,3 +1,4 @@
+/* 共通フォントと背景 */
 body {
   font-family: 'Noto Sans JP', sans-serif;
   background-color: #FAFAFA;
@@ -8,56 +9,41 @@ body {
 /* HEADER */
 .top-bar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
   position: sticky;
   top: 0;
-  z-index: 10;
-  background-color: white;
-  border-bottom: 1px solid #ccc;
-}
-
-.menu {
-  cursor: pointer;
-  font-size: 16px;
-  position: relative;
-}
-
-.menu-items {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 30px;
-  left: 0;
-  background-color: white;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
-.menu-items a {
-  text-decoration: none;
-  color: black;
-  margin: 5px 0;
-}
-
-.menu-items.show {
-  display: flex;
+  z-index: 1000;
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 35px;
-}
-
-.center-logo {
-  flex: 1;
-  text-align: center;
+  font-size: 30px;
+  text-decoration: none;
 }
 
 .logo a {
   text-decoration: none;
   color: black;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 14.5px;
+  transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+  opacity: 0.6;
 }
 
 /* COLLECTION TITLE */
