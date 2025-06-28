@@ -8,8 +8,12 @@ body {
 
 /* タイトルセクション */
 .collection-title {
+  position: sticky;
+  top: 60px;
+  background-color: #FAFAFA;
+  z-index: 500;
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 30px 20px;
 }
 
 .collection-heading {
@@ -48,6 +52,15 @@ body {
   display: block;
 }
 
+/* 1枚目の横画像だけ大きく */
+.collection-image.first img {
+  width: 100vw;
+  max-width: none;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 /* 配置スタイル */
 .collection-image.center img {
   margin: 0 auto;
@@ -74,6 +87,7 @@ body {
     max-width: 90%;
   }
 }
+
 /* HEADER */
 .top-bar {
   display: flex;
