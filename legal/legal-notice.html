@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Legal Notice | GIGI Tokyo</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Noto Sans JP', sans-serif;
@@ -13,6 +15,68 @@
       padding: 0;
     }
 
+    /* ヘッダー */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .menu {
+      font-size: 16px;
+      color: #000;
+      letter-spacing: 1px;
+      cursor: pointer;
+      position: relative;
+      margin-right: auto;
+    }
+
+    .menu-items {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      padding: 10px 15px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .menu-items a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .menu.active .menu-items {
+      display: flex;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      text-decoration: none;
+    }
+
+    .logo a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .center-logo {
+      text-align: center;
+      width: 100%;
+    }
+
+    /* 本文エリア */
     .legal-page {
       max-width: 800px;
       margin: 100px auto;
@@ -45,10 +109,10 @@
     }
 
     .legal-page li {
-      margin-bottom: 8px;
-      list-style-type: disc;
+      margin-bottom: 10px;
     }
 
+    /* フッター */
     footer.footer {
       background-color: #fff;
       padding: 60px 80px 20px 80px;
@@ -58,15 +122,10 @@
 
     .footer-columns {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 120px;
       margin-bottom: 30px;
       transform: translateY(-20px);
-    }
-
-    .footer-column {
-      min-width: 120px;
     }
 
     .footer-column h3 {
@@ -97,17 +156,16 @@
       opacity: 0.6;
     }
 
+    .footer-column.back-to-top {
+      margin-left: auto;
+      text-align: right;
+    }
+
     .footer-bottom {
       text-align: center;
       font-size: 12px;
       margin-top: 20px;
       color: #555;
-    }
-
-    /* トップに戻る用：最右端配置 */
-    .back-to-top {
-      margin-left: auto;
-      text-align: right;
     }
 
     @media (max-width: 768px) {
@@ -118,10 +176,6 @@
 
       .legal-page h2 {
         font-size: 20px;
-      }
-
-      .legal-page h3 {
-        font-size: 16px;
       }
 
       .footer {
@@ -143,9 +197,9 @@
         font-size: 13px;
       }
 
-      .back-to-top {
-        text-align: left;
+      .footer-column.back-to-top {
         margin-left: 0;
+        text-align: left;
       }
     }
 
@@ -156,9 +210,8 @@
     }
   </style>
 </head>
-  
-  <body>
-  <!-- HEADER -->
+<body>
+  <!-- ヘッダー -->
   <header class="top-bar">
     <div class="menu" id="menuBtn">MENU
       <div class="menu-items" id="menuItems">
@@ -168,7 +221,6 @@
         <a href="legal/collaboration.html">COLLABORATION</a>
       </div>
     </div>
-
     <div class="logo center-logo">
       <a href="index.html">GIGI Tokyo</a>
     </div>
@@ -268,33 +320,30 @@
     </ul>
   </div>
 
-  <!-- FOOTER -->
+  <!-- フッター -->
   <footer class="footer">
     <div class="footer-columns">
       <div class="footer-column support">
         <h3>Support</h3>
         <ul>
-          <li><a href="/legal/information.html">Information</a></li>
-          <li><a href="/legal/contact.html">Contact</a></li>
+          <li><a href="information.html">Information</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-column legal">
         <h3>Legal</h3>
         <ul>
-          <li><a href="/legal/legal-notice.html">Legal Notice</a></li>
-          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="/legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="legal-notice.html">Legal Notice</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
         </ul>
       </div>
-
       <div class="footer-column back-to-top">
         <ul>
           <li><a href="/index.html">トップに戻る</a></li>
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2025 GIGI Tokyo. All rights reserved.</p>
     </div>
