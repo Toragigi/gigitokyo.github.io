@@ -54,11 +54,16 @@ body {
 
 /* 1枚目の横画像だけ大きく */
 .collection-image.first img {
-  width: 100vw;
-  max-width: none;
+  display: flex;
+  justify-content: center;
+}
+
+.collection-image.first img {
+  width: 100vw;           /* 画面横幅いっぱい */
   height: auto;
-  display: block;
-  margin: 0 auto;
+  max-width: none;        /* 通常の700px制限を解除 */
+}
+
 }
 
 /* 配置スタイル */
