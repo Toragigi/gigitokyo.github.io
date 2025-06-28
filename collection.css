@@ -74,7 +74,7 @@ body {
     max-width: 90%;
   }
 }
-/* ==== HEADER 共通スタイル ==== */
+/* ===== HEADER 共通スタイル ===== */
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -135,7 +135,7 @@ body {
   width: 100%;
 }
 
-/* ==== FOOTER 共通スタイル ==== */
+/* ===== FOOTER 共通スタイル ===== */
 .footer {
   background-color: #fff;
   padding: 60px 80px 20px 80px;
@@ -191,6 +191,7 @@ body {
   color: #555;
 }
 
+/* ===== フッター レスポンシブ対応 ===== */
 @media (max-width: 768px) {
   .footer {
     padding: 40px 30px 20px 30px;
@@ -216,4 +217,3 @@ body {
     text-align: left;
   }
 }
-
