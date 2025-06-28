@@ -171,6 +171,7 @@ body {
   margin-top: 20px;
   color: #555;
 }
+
 /* MENU */
 .menu {
   font-size: 16px;
@@ -191,7 +192,6 @@ body {
   display: none;
   flex-direction: column;
   gap: 10px;
-  animation: fadeIn 0.3s ease forwards;
   z-index: 999;
 }
 
@@ -201,6 +201,7 @@ body {
   font-size: 14px;
 }
 
-.menu:hover .menu-items {
+.menu:hover .menu-items,
+.menu-items:hover {
   display: flex;
 }
