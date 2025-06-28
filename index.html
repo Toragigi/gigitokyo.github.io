@@ -59,11 +59,10 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const menuBtn = document.getElementById("menuBtn");
-      const menuItems = document.getElementById("menuItems");
       const logo = document.getElementById("logo");
 
       menuBtn.addEventListener("click", function (e) {
-        e.stopPropagation(); // 他のクリックイベントを阻止
+        e.stopPropagation();
         menuBtn.classList.toggle("active");
       });
 
