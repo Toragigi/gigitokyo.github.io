@@ -1,24 +1,21 @@
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  background-color: #FAFAFA; /* 統一背景色 */
+  background-color: #FAFAFA;
   margin: 0;
   padding: 0;
 }
 
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 35px;
-}
-
-/* 追加：中央揃え用クラス */
-.center-logo {
-  flex: 1;
-  text-align: center;
-}
-
-.logo a {
-  text-decoration: none;
-  color: black;
+/* HEADER */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
 }
 
 .menu {
@@ -46,6 +43,21 @@ body {
 
 .menu-items.show {
   display: flex;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+}
+
+.center-logo {
+  flex: 1;
+  text-align: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
 }
 
 /* COLLECTION TITLE */
