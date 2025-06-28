@@ -140,7 +140,6 @@
   </style>
 </head>
 <body>
-  
   <!-- HEADER -->
   <header class="top-bar">
     <div class="menu" id="menuBtn">MENU
@@ -212,6 +211,19 @@
       <p>© 2025 GIGI Tokyo. All rights reserved.</p>
     </div>
   </footer>
-
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuBtn");
+    menuBtn.addEventListener("click", function () {
+      menuBtn.classList.toggle("active");
+    });
+    document.addEventListener("click", function (e) {
+      if (!menuBtn.contains(e.target)) {
+        menuBtn.classList.remove("active");
+      }
+    });
+  });
+</script>
 </body>
 </html>
