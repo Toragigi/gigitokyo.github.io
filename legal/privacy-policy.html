@@ -121,12 +121,14 @@
     }
 
     .footer-columns {
-      display: flex;
-      justify-content: flex-start;
-      gap: 120px;
-      margin-bottom: 30px;
-      transform: translateY(-20px);
-    }
+  display: flex;
+  flex-wrap: wrap; /* 追加：狭い画面で折り返し対応 */
+  justify-content: flex-start;
+  gap: 120px;
+  margin-bottom: 30px;
+  transform: translateY(-20px);
+  align-items: flex-start; /* 追加：高さ揃え */
+}
 
     .footer-column h3 {
       font-size: 20px;
