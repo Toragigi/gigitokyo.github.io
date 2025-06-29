@@ -6,7 +6,7 @@ body {
   color: #000;
 }
 
-/* タイトルセクション（通常表示） */
+/* タイトルセクション */
 .collection-title {
   text-align: center;
   padding: 100px 20px 60px;
@@ -48,14 +48,12 @@ body {
   display: block;
 }
 
-/* 1枚目だけ横長＆やや小さめにし、中央に配置 */
+/* 1枚目（横長画像）のサイズ調整＋中央配置＋左右均等 */
 .collection-image.first img {
-  width: 90vw;
+  width: calc(100vw - 120px); /* 両端60pxずつ余白 */
   max-width: 1200px;
   height: auto;
   display: block;
-  padding-left: 5vw;
-  padding-right: 5vw;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
@@ -89,9 +87,8 @@ body {
   }
 
   .collection-image.first img {
-    width: 95vw;
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
+    width: calc(100vw - 40px); /* 両端20pxずつ余白 */
+    max-width: 100%;
   }
 }
 
