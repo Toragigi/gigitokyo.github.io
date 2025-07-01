@@ -8,9 +8,12 @@
 </head>
 <body>
 
-   <!-- HEADER -->
+  <!-- ▼ HEADER -->
   <header class="top-bar" id="topBar">
-    <div class="menu" id="menu">
+    <div class="logo center-logo">
+      <a href="index.html">GIGI Tokyo</a>
+    </div>
+    <div class="menu menu-toggle" id="menuToggle">
       MENU
       <div class="menu-items" id="menuItems">
         <a href="2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
@@ -19,12 +22,9 @@
         <a href="collaboration.html">COLLABORATION</a>
       </div>
     </div>
-    <div class="logo center-logo">
-      <a href="index.html">GIGI Tokyo</a>
-    </div>
   </header>
 
-  <!-- ▼ 動画セクション -->
+  <!-- ▼ Collaboration Video -->
   <section class="collaboration-video-section">
     <video autoplay loop muted playsinline class="collaboration-video">
       <source src="images/collaboration.mp4" type="video/mp4">
@@ -32,7 +32,7 @@
     </video>
   </section>
 
- <!-- FOOTER -->
+  <!-- ▼ FOOTER -->
   <footer class="footer">
     <div class="footer-columns">
       <div class="footer-column support">
@@ -50,18 +50,24 @@
           <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
         </ul>
       </div>
+      <div class="footer-column back-to-top">
+        <h3>&nbsp;</h3>
+        <ul>
+          <li><a href="index.html">トップに戻る</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 GIGI Tokyo. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ▼ JavaScript（MENUトグル用） -->
+  <!-- ▼ JavaScript（MENUトグル） -->
   <script>
     const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
+    const menuItems = document.querySelector('.menu-items');
     toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
+      menuItems.classList.toggle('active');
     });
   </script>
 
