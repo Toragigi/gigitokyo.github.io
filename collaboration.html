@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collaboration | GIGI Tokyo</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="collaboration.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="collaboration.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ▼ HEADER -->
-  <header class="top-bar" id="topBar">
-    <div class="logo center-logo">
-      <a href="index.html">GIGI Tokyo</a>
-    </div>
-    <div class="menu menu-toggle" id="menuToggle">
-      MENU
+  <!-- ヘッダー -->
+  <header class="top-bar">
+    <div class="menu" id="menuBtn">MENU
       <div class="menu-items" id="menuItems">
         <a href="2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
         <a href="2025-spring-summer.html">2025 SPRING/SUMMER</a>
@@ -22,36 +21,38 @@
         <a href="collaboration.html">COLLABORATION</a>
       </div>
     </div>
+    <div class="logo center-logo">
+      <a href="index.html">GIGI Tokyo</a>
+    </div>
   </header>
 
-  <!-- ▼ Collaboration Video -->
+  <!-- 動画セクション -->
   <section class="collaboration-video-section">
     <video autoplay loop muted playsinline class="collaboration-video">
-      <source src="images/collaboration.mp4" type="video/mp4">
+      <source src="images/collaboration.mp4" type="video/mp4" />
       お使いのブラウザは動画に対応していません。
     </video>
   </section>
 
-  <!-- ▼ FOOTER -->
+  <!-- フッター -->
   <footer class="footer">
     <div class="footer-columns">
       <div class="footer-column support">
         <h3>Support</h3>
         <ul>
-          <li><a href="legal/information.html">Information</a></li>
-          <li><a href="legal/contact.html">Contact</a></li>
+          <li><a href="/legal/information.html">Information</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-column legal">
         <h3>Legal</h3>
         <ul>
-          <li><a href="legal/legal-notice.html">Legal Notice</a></li>
-          <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="/legal/legal-notice.html">Legal Notice</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms-of-service.html">Terms of Service</a></li>
         </ul>
       </div>
       <div class="footer-column back-to-top">
-        <h3>&nbsp;</h3>
         <ul>
           <li><a href="index.html">トップに戻る</a></li>
         </ul>
@@ -62,14 +63,19 @@
     </div>
   </footer>
 
-  <!-- ▼ JavaScript（MENUトグル） -->
+  <!-- メニュー動作スクリプト -->
   <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const menuItems = document.querySelector('.menu-items');
-    toggle.addEventListener('click', () => {
-      menuItems.classList.toggle('active');
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.getElementById("menuBtn");
+      menuBtn.addEventListener("click", function () {
+        menuBtn.classList.toggle("active");
+      });
+      document.addEventListener("click", function (e) {
+        if (!menuBtn.contains(e.target)) {
+          menuBtn.classList.remove("active");
+        }
+      });
     });
   </script>
-
 </body>
 </html>
