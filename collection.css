@@ -218,3 +218,9 @@ body {
   margin-top: 20px;
   color: #555;
 }
+
+@media (max-width: 768px) {
+  .collection-image.first video {
+    width: 100vw;
+  }
+}
