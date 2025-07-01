@@ -48,7 +48,11 @@ body {
   display: block;
 }
 
-.collection-image.first video {
+.collection-image.first {
+  margin-bottom: 80px;
+}
+
+.collection-video {
   width: 100vw;
   height: auto;
   display: block;
@@ -57,7 +61,6 @@ body {
   box-sizing: border-box;
   border: none;
 }
-
 
 /* 配置スタイル */
 .collection-image.center img {
@@ -86,20 +89,9 @@ body {
     max-width: 90%;
   }
 
-  .collection-image.first img {
-    width: calc(100vw - 40px); /* 両端20pxずつ余白 */
-    max-width: 100%;
+  .collection-video {
+    width: 100vw;
   }
-}
-
-.collection-image.first video {
-  width: calc(100vw - 120px);
-  max-width: 1200px;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
 }
 
 /* HEADER */
@@ -217,10 +209,4 @@ body {
   font-size: 12px;
   margin-top: 20px;
   color: #555;
-}
-
-@media (max-width: 768px) {
-  .collection-image.first video {
-    width: 100vw;
-  }
 }
