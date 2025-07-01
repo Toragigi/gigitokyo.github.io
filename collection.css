@@ -48,16 +48,16 @@ body {
   display: block;
 }
 
-/* 1枚目（横長画像）のサイズ調整＋中央配置＋左右均等 */
-.collection-image.first img {
-  width: calc(100vw - 120px); /* 両端60pxずつ余白 */
-  max-width: 1200px;
+.collection-image.first video {
+  width: 100vw;
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  border: none;
 }
+
 
 /* 配置スタイル */
 .collection-image.center img {
