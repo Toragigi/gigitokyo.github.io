@@ -115,3 +115,7 @@
   margin-top: 20px;
   color: #555;
 }
+.footer-column.back-to-top {
+  margin-left: auto;
+  text-align: right;
+}
