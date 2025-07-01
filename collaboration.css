@@ -12,6 +12,7 @@
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
 /* HEADER */
 .top-bar {
   display: flex;
@@ -23,6 +24,38 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.center-logo {
+  text-align: center;
+  width: 100%;
+}
+
+/* NAV MENU（今回は未使用） */
+.nav-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 14.5px;
+  transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+  opacity: 0.6;
 }
 
 /* FOOTER */
