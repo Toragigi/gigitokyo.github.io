@@ -225,3 +225,9 @@ body {
 .menu.active .menu-items {
   display: flex;
 }
+/* 商品画像の高さを統一する（追加） */
+.product-card img {
+  height: 420px; /* 任意調整可能：すべての画像の高さを揃える */
+  object-fit: cover;
+}
+
