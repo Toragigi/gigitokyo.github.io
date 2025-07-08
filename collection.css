@@ -155,6 +155,28 @@ body {
   width: 100%;
 }
 
+.cart-link {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.cart-link:hover {
+  opacity: 0.8;
+}
+
+.cart-icon {
+  width: 28px;
+  height: 28px;
+  stroke: #000;
+}
+
 /* FOOTER */
 .footer {
   background-color: #fff;
