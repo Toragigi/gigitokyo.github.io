@@ -66,6 +66,20 @@ body {
   width: 100%;
 }
 
+.cart-icon {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cart-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+
 /* COLLECTION TITLE */
 .collection-title {
   text-align: center;
