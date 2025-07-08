@@ -66,19 +66,27 @@ body {
   width: 100%;
 }
 
-.cart-icon {
+.cart-link {
   position: absolute;
   right: 30px;
   top: 50%;
   transform: translateY(-50%);
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
-.cart-icon img {
+.cart-link:hover {
+  opacity: 0.6;
+}
+
+.cart-icon {
   width: 28px;
   height: 28px;
-  object-fit: contain;
+  stroke: #000;
 }
-
 
 /* COLLECTION TITLE */
 .collection-title {
