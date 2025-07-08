@@ -108,6 +108,20 @@
     </div>
   </header>
   
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.getElementById("menuBtn");
+      menuBtn.addEventListener("click", function () {
+        menuBtn.classList.toggle("active");
+      });
+      document.addEventListener("click", function (e) {
+        if (!menuBtn.contains(e.target)) {
+          menuBtn.classList.remove("active");
+        }
+      });
+    });
+  </script>
+  
     <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-columns">
