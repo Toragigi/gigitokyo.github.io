@@ -3,7 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <title>Shopping Cart | GIGI Tokyo</title>
-  <link rel="stylesheet" href="cart.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .cart-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .checkout-form {
+      width: 60%;
+      background-color: #f4f4f4; /* collectionやcollaborationと同じ色に合わせてください */
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .cart-summary {
+      width: 40%;
+      background-color: #fff;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .divider {
+      width: 1px;
+      background-color: #ccc;
+    }
+
+    input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .total {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <div class="cart-container">
@@ -43,50 +93,49 @@
     </div>
 
   </div>
+    <!-- HEADER -->
+  <header class="top-bar">
+    <div class="menu" id="menuBtn">MENU
+      <div class="menu-items" id="menuItems">
+        <a href="/2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
+        <a href="/2025-spring-summer.html">2025 SPRING/SUMMER</a>
+        <a href="/collection.html">COLLECTION</a>
+        <a href="/collaboration.html">COLLABORATION</a>
+      </div>
+    </div>
+    <div class="logo center-logo" id="logo">
+      <a href="/index.html">GIGI Tokyo</a>
+    </div>
+  </header>
+  
+    <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-column support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="information.html">Information</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column legal">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="legal-notice.html">Legal Notice</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-column back-to-top">
+        <ul>
+          <li><a href="/index.html">トップに戻る</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 GIGI Tokyo. All rights reserved.</p>
+    </div>
+  </footer>
+  
 </body>
 </html>
-
-body {
-  margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
-}
-
-.cart-container {
-  display: flex;
-  height: 100vh;
-}
-
-.checkout-form {
-  width: 60%;
-  background-color: #f4f4f4; /* collectionやcollaborationと同じ色に合わせてください */
-  padding: 40px;
-  box-sizing: border-box;
-}
-
-.cart-summary {
-  width: 40%;
-  background-color: #fff;
-  padding: 40px;
-  box-sizing: border-box;
-}
-
-.divider {
-  width: 1px;
-  background-color: #ccc;
-}
-
-input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.total {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
