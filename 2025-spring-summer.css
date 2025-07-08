@@ -231,3 +231,29 @@ body {
   background-color: #fff;
 }
 
+/* 商品カードの間隔を詰め、影で区切る */
+.product-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0;
+  padding: 0 20px;
+  gap: 0; /* 商品間のgapを0に */
+}
+
+.product-card {
+  width: 22%;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05); /* 薄い影で区切りを演出 */
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08); /* ホバー時に少し濃く */
+}
+
+
