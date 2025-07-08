@@ -101,7 +101,7 @@ body {
   padding: 0 15px;
 }
 .product-card {
-  width: 24%;  /* ← 写真を大きく見せたい場合は 24%〜25% がおすすめ */
+  width: 25%;  /* ← 写真を大きく見せたい場合は 24%〜25% がおすすめ */
   margin: 0.5%;
   text-align: center;
   position: relative;
@@ -110,7 +110,7 @@ body {
 
 .product-card img {
   width: 100%;
-  height: 500px;  /* ← 420pxから拡大して迫力アップ */
+  height: 600px;  /* ← 420pxから拡大して迫力アップ */
   display: block;
   object-fit: contain;
   background-color: #fff;
@@ -139,7 +139,7 @@ body {
   margin: 4px 0;
   font-size: 12px;
   background-color: #FAFAFA; /* ← body色と統一 */
-  padding: 2px 0;
+  padding: 0px 0;
 }
 
 .product-new {
