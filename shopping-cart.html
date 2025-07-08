@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shopping Cart | GIGI Tokyo</title>
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+  <div class="cart-container">
+    
+    <!-- 左フォームエリア -->
+    <div class="checkout-form">
+      <h2>お届け先情報</h2>
+      <label>メールアドレス</label>
+      <input type="email" placeholder="you@example.com" />
+
+      <h2>お名前・住所</h2>
+      <input type="text" placeholder="姓" />
+      <input type="text" placeholder="名" />
+      <input type="text" placeholder="郵便番号" />
+      <input type="text" placeholder="都道府県" />
+      <input type="text" placeholder="市区町村" />
+      <input type="text" placeholder="住所" />
+
+      <h2>支払い情報</h2>
+      <input type="text" placeholder="カード番号" />
+      <input type="text" placeholder="有効期限（月/年）" />
+      <input type="text" placeholder="セキュリティコード" />
+      <input type="text" placeholder="カード名義人" />
+    </div>
+
+    <!-- 縦線 -->
+    <div class="divider"></div>
+
+    <!-- 右カートエリア -->
+    <div class="cart-summary">
+      <h2>カート内容</h2>
+      <div id="cart-items">
+        <!-- JSで追加予定 -->
+        <p>カートに商品がありません。</p>
+      </div>
+      <p class="total">合計: ¥12,100</p>
+    </div>
+
+  </div>
+</body>
+</html>
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.cart-container {
+  display: flex;
+  height: 100vh;
+}
+
+.checkout-form {
+  width: 60%;
+  background-color: #f4f4f4; /* collectionやcollaborationと同じ色に合わせてください */
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.cart-summary {
+  width: 40%;
+  background-color: #fff;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.divider {
+  width: 1px;
+  background-color: #ccc;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
