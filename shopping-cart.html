@@ -50,17 +50,21 @@
       color: #000;
       text-decoration: none;
       font-size: 14px;
+      transition: all 0.3s ease;
     }
 
     .menu-items a:hover {
-      background-color: #f0f0f0;
+      background-color: #000;
+      color: #fff;
     }
 
     .center-logo a {
       text-decoration: none;
       color: #000;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
 
     /* ===== MAIN CONTENT ===== */
@@ -120,12 +124,12 @@
     }
 
     .footer-columns {
-      display: flex;
-      justify-content: flex-start;
-      gap: 120px;
-      flex-wrap: wrap;
-    }
-
+  display: flex;
+  flex-wrap: wrap;
+  gap: 120px;
+  justify-content: space-between; /* ← ここを追加・調整 */
+}
+    
     .footer-column {
       min-width: 160px;
     }
@@ -214,35 +218,38 @@
     </div>
   </div>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-columns">
-      <div class="footer-column support">
-        <h3>Support</h3>
-        <ul>
-          <li><a href="information.html">Information</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-column legal">
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="legal-notice.html">Legal Notice</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="terms-of-service.html">Terms of Service</a></li>
-        </ul>
-      </div>
-      <div class="footer-column back-to-top">
-        <h3>&nbsp;</h3>
-        <ul>
-          <li><a href="/index.html">トップに戻る</a></li>
-        </ul>
-      </div>
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-columns" style="justify-content: space-between;">
+    <div class="footer-column support">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="information.html">Information</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 GIGI Tokyo. All rights reserved.</p>
+
+    <div class="footer-column legal">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="legal-notice.html">Legal Notice</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <div class="footer-column back-to-top" style="text-align: right;">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="/index.html">トップに戻る</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 GIGI Tokyo. All rights reserved.</p>
+  </div>
+</footer>
 
   <!-- ===== MENU SCRIPT ===== -->
   <script>
