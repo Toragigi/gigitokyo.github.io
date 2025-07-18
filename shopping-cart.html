@@ -14,16 +14,17 @@
     /* ===== HEADER ===== */
     .top-bar {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
       background-color: #fff;
-      padding: 16px 40px;
       border-bottom: 1px solid #ccc;
+      padding: 16px 0;
       position: relative;
     }
 
     .menu {
-      position: relative;
+      position: absolute;
+      left: 40px;
       cursor: pointer;
       font-weight: bold;
     }
@@ -115,6 +116,7 @@
       padding: 40px 60px;
       font-size: 14px;
       border-top: 1px solid #ccc;
+      clear: both;
     }
 
     .footer-columns {
@@ -122,6 +124,7 @@
       justify-content: flex-start;
       gap: 120px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .footer-column h3 {
@@ -167,7 +170,7 @@
         <a href="/collaboration.html">COLLABORATION</a>
       </div>
     </div>
-    <div class="logo center-logo" id="logo">
+    <div class="logo center-logo">
       <a href="/index.html">GIGI Tokyo</a>
     </div>
   </header>
@@ -254,4 +257,3 @@
 
 </body>
 </html>
-
