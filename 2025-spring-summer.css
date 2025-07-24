@@ -33,6 +33,7 @@ body {
   text-align: center;
   width: 100%;
 }
+
 .cart-link {
   position: absolute;
   right: 30px;
@@ -55,24 +56,40 @@ body {
   stroke: #000;
 }
 
-/* NAV MENU（今回は未使用） */
-.nav-menu {
-  display: flex;
-  gap: 30px;
+/* NAV MENU */
+.menu {
+  font-size: 16px;
+  color: #000;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  margin-right: auto;
 }
 
-.nav-menu a {
+.menu-items {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 10px 15px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.menu-items a {
   text-decoration: none;
-  color: black;
-  font-size: 14.5px;
-  transition: opacity 0.3s ease;
+  color: #fff;
+  font-size: 14px;
 }
 
-.nav-menu a:hover {
-  opacity: 0.6;
+.menu.active .menu-items {
+  display: flex;
 }
 
-/* COLLECTION TITLE */
+/* TITLE */
 .collection-title {
   text-align: center;
   margin-top: 100px;
@@ -96,27 +113,34 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0;
   margin: 40px 0;
-  padding: 0 15px;
+  padding: 0 20px;
+  gap: 0;
 }
+
 .product-card {
-  width: 25%;  /* ← 写真を大きく見せたい場合は 24%〜25% がおすすめ */
-  margin: 0.5%;
+  width: 22%;
+  margin: 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
 }
 
 .product-card img {
   width: 100%;
-  height: 600px;  /* ← 420pxから拡大して迫力アップ */
-  display: block;
+  height: 420px;
   object-fit: contain;
   background-color: #fff;
+  display: block;
   transition: opacity 0.5s ease;
 }
-
 
 .product-card img.hover-img {
   position: absolute;
@@ -133,15 +157,24 @@ body {
   opacity: 0;
 }
 
-.product-info {
-  background-color: #FAFAFA; /* ← body と同じ色にする */
-  padding: 10px 0;
-  font-size: 12px; /* ← サイズ調整済み */
+.product-name,
+.product-price,
+.product-new {
+  color: #000;
+  font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 10px 0 4px;
+  text-decoration: none;
+}
+
+.product-price {
+  font-weight: normal;
 }
 
 .product-new {
-  color: black;
+  font-size: 12px;
   font-weight: normal;
+  color: #000;
 }
 
 /* FOOTER */
@@ -194,68 +227,3 @@ body {
   margin-top: 20px;
   color: #555;
 }
-
-/* MENU */
-.menu {
-  font-size: 16px;
-  color: #000;
-  letter-spacing: 1px;
-  cursor: pointer;
-  position: relative;
-  margin-right: auto;
-}
-
-.menu-items {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  background: rgba(0, 0, 0, 0.85);
-  color: #fff;
-  padding: 10px 15px;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 999;
-}
-
-.menu-items a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 14px;
-}
-
-.menu.active .menu-items {
-  display: flex;
-}
-.product-card img {
-  height: 420px;
-  object-fit: contain;
-  background-color: #fff;
-}
-
-/* 商品カードの間隔を詰め、影で区切る */
-.product-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 40px 0;
-  padding: 0 20px;
-  gap: 0; /* 商品間のgapを0に */
-}
-
-.product-card {
-  width: 22%;
-  margin: 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05); /* 薄い影で区切りを演出 */
-  background-color: #fff;
-  transition: box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08); /* ホバー時に少し濃く */
-}
-
-
