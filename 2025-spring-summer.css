@@ -208,3 +208,20 @@ body {
 .menu.active .menu-items {
   display: flex;
 }
+.menu-items {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.menu-items.active {
+  display: block;
+}
+
+.menu {
+  position: relative;
+  cursor: pointer;
+}
