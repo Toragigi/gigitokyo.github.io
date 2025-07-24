@@ -72,18 +72,25 @@
 
   <!-- SCRIPT -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuBtn = document.getElementById("menuBtn");
-      menuBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        menuBtn.classList.toggle("active");
+  document.addEventListener("DOMContentLoaded", function () {
+    const cartItemsDiv = document.getElementById("cart-items");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+      cartItemsDiv.innerHTML = "<p>カートに商品がありません。</p>";
+    } else {
+      let html = "<ul>";
+      let total = 0;
+      cart.forEach(item => {
+        html += `<li>${item.name} - ¥${item.price.toLocaleString()}</li>`;
+        total += item.price;
       });
-      document.addEventListener("click", function (e) {
-        if (!menuBtn.contains(e.target)) {
-          menuBtn.classList.remove("active");
-        }
-      });
-    });
-  </script>
+      html += "</ul>";
+      cartItemsDiv.innerHTML = html;
+      document.querySelector(".total").textContent = `合計: ¥${total.toLocaleString()}`;
+    }
+  });
+</script>
+
 </body>
 </html>
