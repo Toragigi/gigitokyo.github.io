@@ -199,15 +199,6 @@ body {
   z-index: 999;
 }
 
-.menu-items a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 14px;
-}
-
-.menu.active .menu-items {
-  display: flex;
-}
 .menu-items {
   display: none;
   position: absolute;
@@ -215,10 +206,17 @@ body {
   border: 1px solid #ccc;
   padding: 10px;
   z-index: 1000;
+  flex-direction: column; /* 追加：縦に並べる */
 }
 
 .menu-items.active {
-  display: block;
+  display: flex;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #000; /* 白背景なので黒文字が見やすい */
+  font-size: 14px;
 }
 
 .menu {
