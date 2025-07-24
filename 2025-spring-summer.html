@@ -163,6 +163,17 @@
       });
     });
   </script>
+<script>
+  // ヘッダーメニューの開閉処理
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuBtn = document.getElementById('menu');
+    const menuItems = document.getElementById('menuItems');
+
+    menuBtn.addEventListener('click', function () {
+      menuItems.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>
