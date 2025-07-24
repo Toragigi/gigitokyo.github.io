@@ -42,13 +42,15 @@
   <!-- PRODUCTS -->
   <section class="product-section">
 
-    <div class="product-card">
-      <img src="images/flare-mini-skirt.jpg" alt="Flare Mini Skirt" class="main-img">
-      <img src="images/flare-mini-skirt-back.jpg" alt="Back view" class="hover-img">
-      <p class="product-name">Flare Mini Skirt</p>
-      <p class="product-price">¥0</p>
-      <p class="product-new">NEW</p>
-    </div>
+    <div class="product-card" data-name="Flare Mini Skirt" data-price="12100">
+  <img src="images/flare-mini-skirt.jpg" alt="Flare Mini Skirt" class="main-img">
+  <img src="images/flare-mini-skirt-back.jpg" alt="Back view" class="hover-img">
+  <p class="product-name">Flare Mini Skirt</p>
+  <p class="product-price">¥12,100</p>
+  <p class="product-new">NEW</p>
+  <button class="add-to-cart-btn">カートに追加</button> <!-- 追加ここ -->
+</div>
+
 
     <div class="product-card">
       <img src="images/sharp-bustier-top.jpg" alt="Sharp Bustier Top" class="main-img">
@@ -133,10 +135,18 @@
   </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.menu');
-    menu.addEventListener('click', () => {
-      menu.classList.toggle('active');
+  <script>
+  document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const card = this.closest('.product-card');
+      const name = card.getAttribute('data-name');
+      const price = parseInt(card.getAttribute('data-price'));
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(`${name} をカートに追加しました`);
     });
   });
 </script>
