@@ -92,21 +92,20 @@ body {
   background-color: #fff;
 }
 
+/* 商品カードの画像サイズ調整 */
 .product-card img {
   width: 100%;
   height: auto;
-  max-height: 480px;
-  object-fit: contain;
+  max-height: 600px;
+  object-fit: cover;
   background-color: #fff;
-  transition: opacity 0.5s ease;
 }
 
-.product-card img.hover-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
+/* 商品カードの幅制限を解除して広げる */
+.product-card {
+  max-width: 100%;
 }
+
 
 .product-card:hover img.hover-img {
   opacity: 1;
