@@ -72,6 +72,7 @@
       max-width: 900px;
       margin: 80px auto;
       padding: 20px;
+      background-color: #FAFAFA;
     }
 
     .cart-title {
@@ -232,7 +233,11 @@
       let total = 0;
 
       if (cart.length === 0) {
-        cartItemsDiv.innerHTML = "<p>カートは空です。</p>";
+        cartItemsDiv.innerHTML = `
+  <div style="text-align: center; padding: 80px 20px; font-size: 16px; color: #555;">
+    カートは空です。
+  </div>
+`;
       } else {
         cart.forEach((item, index) => {
           total += item.price * item.quantity;
