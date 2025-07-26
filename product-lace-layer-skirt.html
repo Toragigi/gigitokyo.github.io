@@ -261,7 +261,7 @@
     </div>
   </footer>
 
- <script>
+<script>
   // メニュー開閉
   document.addEventListener("DOMContentLoaded", function () {
     const menuBtn = document.getElementById("menuBtn");
@@ -278,22 +278,17 @@
     document.querySelector('.add-to-cart').addEventListener('click', () => {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-      // 動的取得
+      // HTMLから商品情報を動的に取得
       const id = document.querySelector('.product-info p')?.textContent?.trim() || "NO-ID";
       const name = document.querySelector('.product-info h1')?.textContent?.trim() || "No Name";
-      const priceText = document.querySelector('.product-info .price')?.textContent || "¥0";
-      const price = parseInt(priceText.replace(/[^\d]/g, '')) || 0;
-      const size = document.querySelector('.size-options p')?.textContent?.replace("Size:", "").trim() || "F";
-      const colorCircle = document.querySelector('.circle-color');
-      const color = colorCircle ? window.getComputedStyle(colorCircle).backgroundColor : "Gray";
       const image = document.querySelector('.product-images img')?.getAttribute('src') || "";
 
       const product = {
         id: id,
         name: name,
-        price: price,
-        size: size,
-        color: color,
+        price: 0,
+        size: "F",
+        color: "Gray",
         quantity: 1,
         image: image
       };
