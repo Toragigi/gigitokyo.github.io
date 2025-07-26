@@ -129,7 +129,7 @@ body {
 .product-image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4; /* 綺麗な縦長比率 */
   overflow: hidden;
 }
 
@@ -167,7 +167,20 @@ body {
   color: #000;
   font-size: 14px;
   margin-top: 10px;
+  margin-bottom: 4px;
+  line-height: 1.4;
 }
+
+.product-price {
+  font-weight: bold;
+}
+
+.product-new {
+  font-size: 13px;
+  font-weight: normal;
+  color: #333;
+}
+
 
 /* === FOOTER === */
 .footer {
