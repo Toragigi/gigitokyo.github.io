@@ -164,17 +164,21 @@
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+    <!-- メニュー動作スクリプト -->
   <script>
-    // ヘッダーメニューの開閉処理
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuBtn = document.getElementById('menu');
-      const menuItems = document.getElementById('menuItems');
-      menuBtn.addEventListener('click', function () {
-        menuItems.classList.toggle('active');
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.getElementById("menuBtn");
+      menuBtn.addEventListener("click", function () {
+        menuBtn.classList.toggle("active");
+      });
+      document.addEventListener("click", function (e) {
+        if (!menuBtn.contains(e.target)) {
+          menuBtn.classList.remove("active");
+        }
       });
     });
   </script>
+
 
 </body>
 </html>
