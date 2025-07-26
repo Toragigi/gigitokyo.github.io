@@ -261,32 +261,41 @@
     </div>
   </footer>
 
-  <script>
-    // メニュー開閉
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuBtn = document.getElementById("menuBtn");
-      menuBtn.addEventListener("click", function () {
-        menuBtn.classList.toggle("active");
-      });
-      document.addEventListener("click", function (e) {
-        if (!menuBtn.contains(e.target)) {
-          menuBtn.classList.remove("active");
-        }
-      });
+ <script>
+  // メニュー開閉
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuBtn");
+    menuBtn.addEventListener("click", function () {
+      menuBtn.classList.toggle("active");
+    });
+    document.addEventListener("click", function (e) {
+      if (!menuBtn.contains(e.target)) {
+        menuBtn.classList.remove("active");
+      }
     });
 
     // カートに商品を追加
     document.querySelector('.add-to-cart').addEventListener('click', () => {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+      // 動的取得
+      const id = document.querySelector('.product-info p')?.textContent?.trim() || "NO-ID";
+      const name = document.querySelector('.product-info h1')?.textContent?.trim() || "No Name";
+      const priceText = document.querySelector('.product-info .price')?.textContent || "¥0";
+      const price = parseInt(priceText.replace(/[^\d]/g, '')) || 0;
+      const size = document.querySelector('.size-options p')?.textContent?.replace("Size:", "").trim() || "F";
+      const colorCircle = document.querySelector('.circle-color');
+      const color = colorCircle ? window.getComputedStyle(colorCircle).backgroundColor : "Gray";
+      const image = document.querySelector('.product-images img')?.getAttribute('src') || "";
+
       const product = {
-        id: "TR33905",
-        name: "Lace Layer Skirt",
-        price: 0,
-        size: "F",
-        color: "Gray",
+        id: id,
+        name: name,
+        price: price,
+        size: size,
+        color: color,
         quantity: 1,
-        image: "images/item1-main.jpg"
+        image: image
       };
 
       const existingItemIndex = cart.findIndex(item =>
@@ -304,6 +313,5 @@
       localStorage.setItem('cart', JSON.stringify(cart));
       alert("カートに追加しました");
     });
-  </script>
-</body>
-</html>
+  });
+</script>
