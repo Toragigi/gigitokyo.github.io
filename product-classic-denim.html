@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Classic Denim | GIGI Tokyo</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Noto Sans JP', sans-serif;
@@ -172,6 +172,7 @@
     }
   </style>
 </head>
+
 <body>
   <header class="top-bar">
     <div class="menu" id="menuBtn">MENU
@@ -189,10 +190,10 @@
 
   <main class="product-detail-container">
     <div class="product-images">
-      <img src="images/item1-main.jpg" alt="商品画像1">
-      <img src="images/item1-side.jpg" alt="商品画像2">
-      <img src="images/item1-back.jpg" alt="商品画像3">
-      <img src="images/item1-detail.jpg" alt="商品画像4">
+      <img src="images/item1-main.jpg" alt="商品画像1" />
+      <img src="images/item1-side.jpg" alt="商品画像2" />
+      <img src="images/item1-back.jpg" alt="商品画像3" />
+      <img src="images/item1-detail.jpg" alt="商品画像4" />
     </div>
 
     <div class="product-info">
@@ -203,8 +204,6 @@
       <div class="color-options">
         <p>Color</p>
         <div class="circle-color" style="background-color: #ccc;"></div>
-        <div class="circle-color" style="background-color: #e0e0e0;"></div>
-        <div class="circle-color" style="background-color: #000;"></div>
       </div>
 
       <div class="size-options">
@@ -217,7 +216,7 @@
       <div class="detail-toggle">
         <h3>Detail</h3>
         <p>*摩擦や汗、雨などで濡れた時に他の衣類に色移りする場合がありますので十分ご注意ください。<br>
-        モデル身長：173cm　着用サイズ：F</p>
+        モデル身長：161cm　着用サイズ：F</p>
       </div>
     </div>
   </main>
@@ -246,6 +245,7 @@
   </footer>
 
   <script>
+    // メニュー開閉
     document.addEventListener("DOMContentLoaded", function () {
       const menuBtn = document.getElementById("menuBtn");
       menuBtn.addEventListener("click", function () {
@@ -256,6 +256,36 @@
           menuBtn.classList.remove("active");
         }
       });
+    });
+
+    // カートに商品を追加
+    document.querySelector('.add-to-cart').addEventListener('click', () => {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      const product = {
+        id: "TR33905",
+        name: "Classic Denim",
+        price: 0,
+        size: "F",
+        color: "Blue",
+        quantity: 1,
+        image: "images/item1-main.jpg"
+      };
+
+      const existingItemIndex = cart.findIndex(item =>
+        item.id === product.id &&
+        item.size === product.size &&
+        item.color === product.color
+      );
+
+      if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert("カートに追加しました");
     });
   </script>
 </body>
