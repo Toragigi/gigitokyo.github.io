@@ -2,95 +2,129 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shopping Cart | GIGI Tokyo</title>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .cart-container {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 20px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      padding: 15px 0;
+    }
+    .cart-item img {
+      width: 100px;
+      margin-right: 20px;
+    }
+    .cart-item-info {
+      flex: 1;
+    }
+    .cart-actions {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .cart-actions button {
+      border: 1px solid #000;
+      background: #fff;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+    .remove-btn {
+      color: red;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .cart-summary {
+      text-align: right;
+      margin-top: 20px;
+    }
+    .checkout-btn {
+      margin-top: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="top-bar">
-    <div class="menu" id="menuBtn">MENU
-      <div class="menu-items">
-        <a href="2025-autumn-winter.html">2025 AUTUMN/WINTER</a>
-        <a href="2025-spring-summer.html">2025 SPRING/SUMMER</a>
-        <a href="collection.html">COLLECTION</a>
-        <a href="collaboration.html">COLLABORATION</a>
-      </div>
-    </div>
 
-    <div class="logo center-logo" id="logo">
+  <header class="top-bar">
+    <div class="logo center-logo">
       <a href="index.html">GIGI Tokyo</a>
     </div>
-
-    <a href="shopping-cart.html" class="cart-link" aria-label="Shopping Cart">
-      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="9" cy="21" r="1" />
-        <circle cx="20" cy="21" r="1" />
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-      </svg>
-    </a>
   </header>
 
-  <!-- CART SECTION -->
-  <section class="cart-container">
-      <div class="divider"></div>
-
+  <main class="cart-container">
+    <h1>SHOPPING BAG</h1>
+    <div id="cart-items"></div>
     <div class="cart-summary">
-      <h2>カート内容</h2>
-      <div id="cart-items">
-        <p>カートに商品がありません。</p>
-      </div>
-      <p class="total">合計: ¥12,100</p>
+      <p><strong>SUBTOTAL:</strong> ¥<span id="cart-total">0</span></p>
+      <button class="checkout-btn">CHECKOUT</button>
     </div>
-  </section>
+  </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-columns">
-      <div class="footer-column support">
-        <h3>Support</h3>
-        <ul>
-          <li><a href="legal/information.html">Information</a></li>
-          <li><a href="legal/contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-column legal">
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="legal/legal-notice.html">Legal Notice</a></li>
-          <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 GIGI Tokyo. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- SCRIPT -->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const cartItemsDiv = document.getElementById("cart-items");
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    if (cart.length === 0) {
-      cartItemsDiv.innerHTML = "<p>カートに商品がありません。</p>";
-    } else {
-      let html = "<ul>";
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsDiv = document.getElementById('cart-items');
+      const totalPriceEl = document.getElementById('cart-total');
+      cartItemsDiv.innerHTML = '';
       let total = 0;
-      cart.forEach(item => {
-        html += `<li>${item.name} - ¥${item.price.toLocaleString()}</li>`;
-        total += item.price;
-      });
-      html += "</ul>";
-      cartItemsDiv.innerHTML = html;
-      document.querySelector(".total").textContent = `合計: ¥${total.toLocaleString()}`;
-    }
-  });
-</script>
 
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = "<p>カートは空です。</p>";
+      } else {
+        cart.forEach((item, index) => {
+          total += item.price * item.quantity;
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'cart-item';
+          itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-item-info">
+              <p><strong>${item.name}</strong></p>
+              <p>COLOR: ${item.color} | SIZE: ${item.size}</p>
+              <p>¥${item.price}</p>
+            </div>
+            <div class="cart-actions">
+              <button onclick="updateQuantity(${index}, -1)">-</button>
+              <span>${item.quantity}</span>
+              <button onclick="updateQuantity(${index}, 1)">+</button>
+              <span class="remove-btn" onclick="removeItem(${index})">Remove</span>
+            </div>
+          `;
+          cartItemsDiv.appendChild(itemDiv);
+        });
+      }
+      totalPriceEl.textContent = total;
+    }
+
+    function updateQuantity(index, change) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart[index].quantity += change;
+      if (cart[index].quantity <= 0) cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function removeItem(index) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
 </body>
 </html>
