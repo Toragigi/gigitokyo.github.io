@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moonlit Tail Gown | GIGI Tokyo</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Moonlit Tail Gown| GIGI Tokyo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Noto Sans JP', sans-serif;
@@ -16,7 +16,7 @@
 
     .top-bar {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 20px 60px;
       background-color: #fff;
@@ -32,7 +32,6 @@
       letter-spacing: 1px;
       cursor: pointer;
       position: relative;
-      margin-right: auto;
     }
 
     .menu-items {
@@ -66,6 +65,14 @@
     .logo a {
       text-decoration: none;
       color: #000;
+    }
+
+    .cart-link {
+      margin-left: 20px;
+    }
+
+    .cart-icon {
+      display: block;
     }
 
     .product-detail-container {
@@ -172,6 +179,7 @@
     }
   </style>
 </head>
+
 <body>
   <header class="top-bar">
     <div class="menu" id="menuBtn">MENU
@@ -182,17 +190,26 @@
         <a href="collaboration.html">COLLABORATION</a>
       </div>
     </div>
+
     <div class="logo center-logo">
       <a href="index.html">GIGI Tokyo</a>
     </div>
+
+    <a href="shopping-cart.html" class="cart-link" aria-label="Shopping Cart">
+      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1" />
+        <circle cx="20" cy="21" r="1" />
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+      </svg>
+    </a>
   </header>
 
   <main class="product-detail-container">
     <div class="product-images">
-      <img src="images/item1-main.jpg" alt="商品画像1">
-      <img src="images/item1-side.jpg" alt="商品画像2">
-      <img src="images/item1-back.jpg" alt="商品画像3">
-      <img src="images/item1-detail.jpg" alt="商品画像4">
+      <img src="images/item1-main.jpg" alt="商品画像1" />
+      <img src="images/item1-side.jpg" alt="商品画像2" />
+      <img src="images/item1-back.jpg" alt="商品画像3" />
+      <img src="images/item1-detail.jpg" alt="商品画像4" />
     </div>
 
     <div class="product-info">
@@ -203,8 +220,6 @@
       <div class="color-options">
         <p>Color</p>
         <div class="circle-color" style="background-color: #ccc;"></div>
-        <div class="circle-color" style="background-color: #e0e0e0;"></div>
-        <div class="circle-color" style="background-color: #000;"></div>
       </div>
 
       <div class="size-options">
@@ -246,6 +261,7 @@
   </footer>
 
   <script>
+    // メニュー開閉
     document.addEventListener("DOMContentLoaded", function () {
       const menuBtn = document.getElementById("menuBtn");
       menuBtn.addEventListener("click", function () {
@@ -256,6 +272,36 @@
           menuBtn.classList.remove("active");
         }
       });
+    });
+
+    // カートに商品を追加
+    document.querySelector('.add-to-cart').addEventListener('click', () => {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      const product = {
+        id: "TR33905",
+        name: "Moonlit Tail Gown",
+        price: 0,
+        size: "F",
+        color: "Gray",
+        quantity: 1,
+        image: "images/item1-main.jpg"
+      };
+
+      const existingItemIndex = cart.findIndex(item =>
+        item.id === product.id &&
+        item.size === product.size &&
+        item.color === product.color
+      );
+
+      if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert("カートに追加しました");
     });
   </script>
 </body>
