@@ -16,7 +16,7 @@
 
     .top-bar {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 20px 60px;
       background-color: #fff;
@@ -32,7 +32,6 @@
       letter-spacing: 1px;
       cursor: pointer;
       position: relative;
-      margin-right: auto;
     }
 
     .menu-items {
@@ -66,6 +65,14 @@
     .logo a {
       text-decoration: none;
       color: #000;
+    }
+
+    .cart-link {
+      margin-left: 20px;
+    }
+
+    .cart-icon {
+      display: block;
     }
 
     .product-detail-container {
@@ -183,9 +190,18 @@
         <a href="collaboration.html">COLLABORATION</a>
       </div>
     </div>
+
     <div class="logo center-logo">
       <a href="index.html">GIGI Tokyo</a>
     </div>
+
+    <a href="shopping-cart.html" class="cart-link" aria-label="Shopping Cart">
+      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1" />
+        <circle cx="20" cy="21" r="1" />
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+      </svg>
+    </a>
   </header>
 
   <main class="product-detail-container">
@@ -198,7 +214,7 @@
 
     <div class="product-info">
       <p>TR33905</p>
-      <h1>Classic Denim</h1>
+      <h1>Classic Denim </h1>
       <div class="price">¥0 <span style="font-size: 13px;">(tax in)</span></div>
 
       <div class="color-options">
@@ -216,7 +232,7 @@
       <div class="detail-toggle">
         <h3>Detail</h3>
         <p>*摩擦や汗、雨などで濡れた時に他の衣類に色移りする場合がありますので十分ご注意ください。<br>
-        モデル身長：161cm　着用サイズ：F</p>
+        モデル身長：173cm　着用サイズ：F</p>
       </div>
     </div>
   </main>
@@ -264,7 +280,7 @@
 
       const product = {
         id: "TR33905",
-        name: "Classic Denim",
+        name: "Classic Denim ",
         price: 0,
         size: "F",
         color: "Blue",
