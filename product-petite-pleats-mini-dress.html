@@ -267,32 +267,42 @@
     </div>
   </footer>
 
-  <script>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
     // メニュー開閉
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuBtn = document.getElementById("menuBtn");
-      menuBtn.addEventListener("click", function () {
-        menuBtn.classList.toggle("active");
-      });
-      document.addEventListener("click", function (e) {
-        if (!menuBtn.contains(e.target)) {
-          menuBtn.classList.remove("active");
-        }
-      });
+    const menuBtn = document.getElementById("menuBtn");
+    menuBtn.addEventListener("click", function () {
+      menuBtn.classList.toggle("active");
     });
+    document.addEventListener("click", function (e) {
+      if (!menuBtn.contains(e.target)) {
+        menuBtn.classList.remove("active");
+      }
+    });
+
+    // Detail 開閉
+    const detailToggleBtn = document.getElementById("detailToggleBtn");
+    const detailContent = document.getElementById("detail-content");
+    if (detailToggleBtn && detailContent) {
+      detailToggleBtn.addEventListener("click", function () {
+        const isVisible = detailContent.style.display === "block";
+        detailContent.style.display = isVisible ? "none" : "block";
+        detailToggleBtn.textContent = isVisible ? "Detail ＋" : "Detail −";
+      });
+    }
 
     // カートに商品を追加
     document.querySelector('.add-to-cart').addEventListener('click', () => {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
       const product = {
-        id: "S015n",
-        name: "Petite Pleats Mini Dress",
-        price: 9900,
+        id: "S0015n",
+        name: "Moonlit Tail Gown",
+        price: 11200,
         size: "F",
-        color: "Black",
+        color: "White",
         quantity: 1,
-        image: "images/item6-main.jpg"
+        image: "images/moonlit-tail-gown-main.jpg"
       };
 
       const existingItemIndex = cart.findIndex(item =>
@@ -310,6 +320,7 @@
       localStorage.setItem('cart', JSON.stringify(cart));
       alert("カートに追加しました");
     });
-  </script>
+  });
+</script>
 </body>
 </html>
