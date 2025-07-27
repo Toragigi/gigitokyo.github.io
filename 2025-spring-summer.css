@@ -72,8 +72,8 @@ body {
 
 /* PRODUCTS */
 .product-section {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* ← 4列固定 */
   justify-content: center;
   gap: 0;
   margin: 40px 0;
