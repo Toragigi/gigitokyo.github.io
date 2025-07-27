@@ -276,19 +276,30 @@
     </div>
   </footer>
 
-  <script>
-    // メニュー開閉
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuBtn = document.getElementById("menuBtn");
-      menuBtn.addEventListener("click", function () {
-        menuBtn.classList.toggle("active");
-      });
-      document.addEventListener("click", function (e) {
-        if (!menuBtn.contains(e.target)) {
-          menuBtn.classList.remove("active");
-        }
-      });
+<script>
+  // メニュー開閉
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuBtn");
+    menuBtn.addEventListener("click", function () {
+      menuBtn.classList.toggle("active");
     });
+    document.addEventListener("click", function (e) {
+      if (!menuBtn.contains(e.target)) {
+        menuBtn.classList.remove("active");
+      }
+    });
+
+    // Detail 開閉
+    const detailToggleBtn = document.querySelector(".detail-toggle h3");
+    const detailContent = document.getElementById("detail-content");
+
+    if (detailToggleBtn && detailContent) {
+      detailToggleBtn.addEventListener("click", function () {
+        const isVisible = detailContent.style.display === "block";
+        detailContent.style.display = isVisible ? "none" : "block";
+        detailToggleBtn.textContent = isVisible ? "Detail ＋" : "Detail −";
+      });
+    }
 
     // カートに商品を追加
     document.querySelector('.add-to-cart').addEventListener('click', () => {
@@ -319,18 +330,7 @@
       localStorage.setItem('cart', JSON.stringify(cart));
       alert("カートに追加しました");
     });
-    <script>
-  function toggleDetail() {
-    const content = document.getElementById("detail-content");
-    const title = document.querySelector(".detail-toggle h3");
-    if (content.style.display === "none") {
-      content.style.display = "block";
-      title.textContent = "Detail −";
-    } else {
-      content.style.display = "none";
-      title.textContent = "Detail ＋";
-    }
-  }
-  </script>
+  });
+</script>
 </body>
 </html>
