@@ -105,12 +105,11 @@ body {
   overflow: hidden;
 }
 
-/* 商品名リンクのスタイル調整（黒・下線なし） */
-.product-card a,
-.product-card a:visited,
-.product-card a:hover,
-.product-card a:active,
-.product-card a:focus {
+.product-card a.product-name,
+.product-card a.product-name:visited,
+.product-card a.product-name:hover,
+.product-card a.product-name:active,
+.product-card a.product-name:focus {
   color: #000 !important;
   text-decoration: none !important;
 }
