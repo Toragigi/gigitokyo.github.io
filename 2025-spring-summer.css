@@ -120,7 +120,7 @@ body {
 
 .product-card {
   width: 100%;
-  max-width: 300;
+  max-width: 300px;
   background-color: #fff;
   text-align: center;
 }
