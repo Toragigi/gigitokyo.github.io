@@ -112,17 +112,19 @@ body {
 /* === PRODUCT GRID === */
 .product-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  padding: 10px 20px;
+  grid-template-columns: repeat(4, 1fr);  /* ← 4列固定 */
+  gap: 10px;
+  padding: 20px 40px;
   justify-items: center;
 }
 
 .product-card {
   width: 100%;
-  max-width: 300px;
+  max-width: 300px;  /* ← サイズ制限ありで画像保持 */
   background-color: #fff;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .product-image-wrapper {
@@ -168,7 +170,9 @@ body {
   font-size: 14px;
   margin-top: 10px;
   line-height: 1.5;
+  text-align: center;  /* ← 中央揃え維持 */
 }
+
 
 
 
