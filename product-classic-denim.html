@@ -231,16 +231,26 @@
       <button class="add-to-cart">ADD TO BAG</button>
 
       <div class="detail-toggle">
-        <h3>Detail</h3>
-        <p>*お取り扱いの御注意
-・蛍光材の入っていない洗剤をご使用下さい。
-・タンブラー乾燥はお避け下さい。
-・洗濯の際に色落ちすることがありますので、他の商品との洗濯はお避け下さい。（単独洗い）
-・脱水後は直ちに取り出し、形を整えてから干してください。
-・長時間濡れたまま放置しないでください。
-・素材の特性上、汗や雨等で濡れた時や強く擦られた場合、摩擦により色落ちする場合がありますので御注意ください。
-・付属部分のアイロンはお避けください。<br>
-        モデル身長：173cm　着用サイズ：F</p>
+  <h3 id="detailToggleBtn" style="cursor: pointer;">Detail ＋</h3>
+  <div id="detail-content" style="display: none;">
+    <table style="font-size: 14px; margin-bottom: 16px;">
+      <tr><td>着丈</td><td>32cm</td></tr>
+      <tr><td>肩幅</td><td>43cm</td></tr>
+      <tr><td>裾幅</td><td>55cm</td></tr>
+      <tr><td>身幅</td><td>31cm</td></tr>
+    </table>
+    <p><strong>素材：</strong>コットン100%</p>
+    <p><strong>原産国：</strong>MADE IN KOREA</p>
+    <p style="margin-top: 20px;">*お取り扱いの御注意<br>
+    ・蛍光材の入っていない洗剤をご使用下さい。<br>
+    ・タンブラー乾燥はお避け下さい。<br>
+    ・洗濯の際に色落ちすることがありますので、他の商品との洗濯はお避け下さい。（単独洗い）<br>
+    ・脱水後は直ちに取り出し、形を整えてから干してください。<br>
+    ・長時間濡れたまま放置しないでください。<br>
+    ・素材の特性上、汗や雨等で濡れた時や強く擦られた場合、摩擦により色落ちする場合がありますので御注意ください。<br>
+    ・付属部分のアイロンはお避けください。</p>
+    <p>モデル身長：173cm　着用サイズ：F</p>
+  </div>
       </div>
     </div>
   </main>
@@ -268,30 +278,41 @@
     </div>
   </footer>
 
-  <script>
-    // メニュー開閉
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuBtn = document.getElementById("menuBtn");
-      menuBtn.addEventListener("click", function () {
-        menuBtn.classList.toggle("active");
-      });
-      document.addEventListener("click", function (e) {
-        if (!menuBtn.contains(e.target)) {
-          menuBtn.classList.remove("active");
-        }
-      });
+<script>
+  // メニュー開閉
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuBtn");
+    menuBtn.addEventListener("click", function () {
+      menuBtn.classList.toggle("active");
     });
+    document.addEventListener("click", function (e) {
+      if (!menuBtn.contains(e.target)) {
+        menuBtn.classList.remove("active");
+      }
+    });
+
+    // Detail 開閉
+    const detailToggleBtn = document.querySelector(".detail-toggle h3");
+    const detailContent = document.getElementById("detail-content");
+
+    if (detailToggleBtn && detailContent) {
+      detailToggleBtn.addEventListener("click", function () {
+        const isVisible = detailContent.style.display === "block";
+        detailContent.style.display = isVisible ? "none" : "block";
+        detailToggleBtn.textContent = isVisible ? "Detail ＋" : "Detail −";
+      });
+    }
 
     // カートに商品を追加
     document.querySelector('.add-to-cart').addEventListener('click', () => {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
       const product = {
-        id: "S011n",
-        name: "Classic Denim ",
-        price: 15500,
+        id: "S001n",
+        name: "Scarlett Ruffle Off Shoulder",
+        price: 5500,
         size: "F",
-        color: "Blue",
+        color: "Red",
         quantity: 1,
         image: "images/item1-main.jpg"
       };
@@ -311,6 +332,7 @@
       localStorage.setItem('cart', JSON.stringify(cart));
       alert("カートに追加しました");
     });
-  </script>
+  });
+</script>
 </body>
 </html>
