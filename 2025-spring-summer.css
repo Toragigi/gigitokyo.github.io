@@ -111,8 +111,8 @@ body {
 .product-card a:hover,
 .product-card a:active,
 .product-card a:focus {
-  color: black　!important;
-  text-decoration: none　!important;
+  color: #000 !important;
+  text-decoration: none !important;
 }
 
 .product-card img {
