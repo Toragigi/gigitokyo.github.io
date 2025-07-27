@@ -229,19 +229,35 @@
 
       <button class="add-to-cart">ADD TO BAG</button>
 
-      <div class="detail-toggle">
-        <h3>Detail</h3>
-        <p>*お取り扱いの御注意
-・蛍光材の入っていない洗剤をご使用下さい。
-・タンブラー乾燥はお避け下さい。
-・洗濯の際に色落ちすることがありますので、他の商品との洗濯はお避け下さい。（単独洗い）
-・脱水後は直ちに取り出し、形を整えてから干してください。
-・長時間濡れたまま放置しないでください。
-・素材の特性上、汗や雨等で濡れた時や強く擦られた場合、摩擦により色落ちする場合がありますので御注意ください。
-・付属部分のアイロンはお避けください。<br>
-        モデル身長：161cm　着用サイズ：F</p>
-      </div>
-    </div>
+    <div class="detail-toggle">
+  <h3 id="detailToggleBtn" style="cursor: pointer;">Detail ＋</h3>
+
+  <!-- 開閉式部分 -->
+  <div id="detail-content" style="display: none;">
+    <table style="font-size: 14px; margin-bottom: 16px;">
+      <tr><td>総丈</td><td>32cm</td></tr>
+      <tr><td>ウエスト</td><td>56cm</td></tr>
+      <tr><td>ヒップ</td><td>112cm</td></tr>
+      <tr><td>裾幅</td><td>69cm</td></tr>
+    </table>
+    <p><strong>素材：</strong>ポリエステル100%</p>
+    <p><strong>原産国：</strong>MADE IN KOREA</p>
+    <p style="margin-top: 10px;">*こちらの製品の内側は，ショートパンツの仕様となっております</p>
+  </div>
+
+  <!-- 常時表示部分 -->
+  <div class="always-visible" style="margin-top: 20px;">
+    <p>*お取り扱いの御注意<br>
+    ・蛍光材の入っていない洗剤をご使用下さい。<br>
+    ・タンブラー乾燥はお避け下さい。<br>
+    ・洗濯の際に色落ちすることがありますので、他の商品との洗濯はお避け下さい。（単独洗い）<br>
+    ・脱水後は直ちに取り出し、形を整えてから干してください。<br>
+    ・長時間濡れたまま放置しないでください。<br>
+    ・素材の特性上、汗や雨等で濡れた時や強く擦られた場合、摩擦により色落ちする場合がありますので御注意ください。<br>
+    ・付属部分のアイロンはお避けください。</p>
+    <p>モデル身長：163cm　着用サイズ：F</p>
+  </div>
+</div>
   </main>
 
   <footer class="footer">
@@ -267,9 +283,9 @@
     </div>
   </footer>
 
- <script>
-  // メニュー開閉
+<script>
   document.addEventListener("DOMContentLoaded", function () {
+    // メニュー開閉
     const menuBtn = document.getElementById("menuBtn");
     menuBtn.addEventListener("click", function () {
       menuBtn.classList.toggle("active");
@@ -280,23 +296,29 @@
       }
     });
 
+    // Detail 開閉
+    const detailToggleBtn = document.getElementById("detailToggleBtn");
+    const detailContent = document.getElementById("detail-content");
+    if (detailToggleBtn && detailContent) {
+      detailToggleBtn.addEventListener("click", function () {
+        const isVisible = detailContent.style.display === "block";
+        detailContent.style.display = isVisible ? "none" : "block";
+        detailToggleBtn.textContent = isVisible ? "Detail ＋" : "Detail −";
+      });
+    }
+
     // カートに商品を追加
     document.querySelector('.add-to-cart').addEventListener('click', () => {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-      // HTMLから商品情報を動的に取得
-      const id = document.querySelector('.product-info p')?.textContent?.trim() || "NO-ID";
-      const name = document.querySelector('.product-info h1')?.textContent?.trim() || "No Name";
-      const image = document.querySelector('.product-images img')?.getAttribute('src') || "";
-
       const product = {
-        id: id,
-        name: name,
-        price: 0,
+        id: "S007n",
+        name: "Twinkle Mini Flare Skirt",
+        price: 5500,
         size: "F",
-        color: "Gray",
+        color: "Black",
         quantity: 1,
-        image: image
+        image: "images/twinkle-mini-flare-skirt-main.jpg"
       };
 
       const existingItemIndex = cart.findIndex(item =>
