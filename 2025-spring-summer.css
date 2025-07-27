@@ -1,3 +1,6 @@
+以前のコードでは下線部や、クリック時の赤い文字などありませんでしたが、ここから該当箇所を見つけることはできますか？
+以下が以前のコードです。
+
 /* === BASE === */
 body {
   font-family: 'Noto Sans JP', sans-serif;
@@ -33,6 +36,28 @@ body {
 .center-logo {
   text-align: center;
   width: 100%;
+}
+
+.cart-link {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.cart-link:hover {
+  opacity: 0.8;
+}
+
+.cart-icon {
+  width: 28px;
+  height: 28px;
+  stroke: #000;
 }
 
 /* === MENU === */
@@ -90,12 +115,12 @@ body {
 /* === PRODUCT GRID === */
 .product-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);  /* ← 4列固定 */
   gap: 10px;
   margin: 40px 0;
   padding: 0 20px;
 }
+
 
 .product-card {
   width: 100%;
@@ -105,25 +130,39 @@ body {
   overflow: hidden;
 }
 
-
-.product-card img {
+.product-image-wrapper {
+  position: relative;
   width: 100%;
-  display: block;
-  transition: opacity 0.5s ease;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background-color: #fff;
 }
 
-.product-card img.hover-img {
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.product-card:hover img.hover-img {
+.main-img {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hover-img {
+  opacity: 0;
+  z-index: 2;
+}
+
+.product-image-wrapper:hover .hover-img {
   opacity: 1;
 }
 
-.product-card:hover img.main-img {
+.product-image-wrapper:hover .main-img {
   opacity: 0;
 }
 
@@ -136,6 +175,9 @@ body {
   line-height: 1.5;
   text-align: center;  /* ← 中央揃え維持 */
 }
+
+
+
 
 /* === FOOTER === */
 .footer {
