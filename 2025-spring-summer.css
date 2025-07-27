@@ -105,14 +105,6 @@ body {
   overflow: hidden;
 }
 
-.product-card a.product-name,
-.product-card a.product-name:visited,
-.product-card a.product-name:hover,
-.product-card a.product-name:active,
-.product-card a.product-name:focus {
-  color: #000 !important;
-  text-decoration: none !important;
-}
 
 .product-card img {
   width: 100%;
