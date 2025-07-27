@@ -113,8 +113,8 @@ body {
 .product-section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 60px 30px;
-  padding: 10px 40px;
+  gap: 0;
+  padding: 10px 20px;
   justify-items: center;
 }
 
