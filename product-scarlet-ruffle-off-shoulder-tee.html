@@ -277,8 +277,8 @@
   </footer>
 
 <script>
-  // メニュー開閉
   document.addEventListener("DOMContentLoaded", function () {
+    // メニュー開閉
     const menuBtn = document.getElementById("menuBtn");
     menuBtn.addEventListener("click", function () {
       menuBtn.classList.toggle("active");
@@ -290,9 +290,8 @@
     });
 
     // Detail 開閉
-    const detailToggleBtn = document.querySelector(".detail-toggle h3");
+    const detailToggleBtn = document.getElementById("detailToggleBtn");
     const detailContent = document.getElementById("detail-content");
-
     if (detailToggleBtn && detailContent) {
       detailToggleBtn.addEventListener("click", function () {
         const isVisible = detailContent.style.display === "block";
@@ -307,12 +306,12 @@
 
       const product = {
         id: "S001n",
-        name: "Scarlett Ruffle Off Shoulder",
+        name: "Scarlet Ruffle Off-Shoulder Tee",
         price: 5500,
         size: "F",
         color: "Red",
         quantity: 1,
-        image: "images/item1-main.jpg"
+        image: "images/scarlet-ruffle-off-shoulder-tee.jpg"
       };
 
       const existingItemIndex = cart.findIndex(item =>
