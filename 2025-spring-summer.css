@@ -166,11 +166,12 @@ body {
 .product-name,
 .product-price,
 .product-new {
-  color: #000;
+  color: #000 !important;
   font-size: 14px;
   margin-top: 10px;
   line-height: 1.5;
   text-align: center;  /* ← 中央揃え維持 */
+  text-decoration: none !important;
 }
 
 
