@@ -113,14 +113,14 @@ body {
 .product-section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 60px 30px;
-  padding: 60px 40px;
+  gap: 0;
+  padding: 60px 20px;
   justify-items: center;
 }
 
 .product-card {
   width: 100%;
-  max-width: 300px;
+  max-width: none;
   background-color: #fff;
   text-align: center;
 }
