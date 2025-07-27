@@ -138,13 +138,11 @@ body {
 .product-name,
 .product-price,
 .product-new {
-  margin: 4px 0;
-  font-size: 13px;
   color: #000;
-}
-
-.product-new {
-  font-weight: normal;
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 1.5;
+  text-align: center;  /* ← 中央揃え維持 */
 }
 
 /* === FOOTER === */
