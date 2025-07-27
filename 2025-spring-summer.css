@@ -87,10 +87,10 @@ body {
   margin: 0 auto;
 }
 
-/* === PRODUCTS GRID === */
+/* === PRODUCT GRID === */
 .product-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* ← 4列固定 */
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   gap: 10px;
   margin: 40px 0;
@@ -105,7 +105,16 @@ body {
   overflow: hidden;
 }
 
-/* 商品画像 */
+/* 商品名リンクのスタイル調整（黒・下線なし） */
+.product-card a,
+.product-card a:visited,
+.product-card a:hover,
+.product-card a:active,
+.product-card a:focus {
+  color: black;
+  text-decoration: none;
+}
+
 .product-card img {
   width: 100%;
   display: block;
@@ -127,29 +136,16 @@ body {
   opacity: 0;
 }
 
-/* 商品テキスト共通 */
 .product-name,
 .product-price,
 .product-new {
   margin: 4px 0;
   font-size: 13px;
-  color: black;
+  color: #000;
 }
 
-/* NEWラベル */
 .product-new {
   font-weight: normal;
-}
-
-/* 商品リンク（← 追加スタイル） */
-.product-card a {
-  color: black;
-  text-decoration: none;
-}
-
-.product-card a:visited {
-  color: black;
-  text-decoration: none;
 }
 
 /* === FOOTER === */
