@@ -296,7 +296,7 @@
       }
     });
 
-    // Detail 開閉
+    // Detail開閉（汎用）
     const detailToggleBtn = document.getElementById("detailToggleBtn");
     const detailContent = document.getElementById("detail-content");
     if (detailToggleBtn && detailContent) {
@@ -307,21 +307,21 @@
       });
     }
 
-    // カートに商品を追加
+    // カートに商品を追加（ここだけ商品ごとに書き換える）
     document.querySelector('.add-to-cart').addEventListener('click', () => {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-     const product = {
-  id: "S008n",
-  name: "Fairy Lace Layer Skirt",
-  price: 7200,
-  size: "F",
-  color: "White",
-  quantity: 1,
-  image: "images/fairy-lace-layer-skirt-main.jpg"
-};
+      const product = {
+        id: "S008n",
+        name: "Fairy Lace Layer Skirt",
+        price: 7200,
+        size: "F",
+        color: "Black",
+        quantity: 1,
+        image: "images/fairy-lace-layer-skirt-main.jpg"
+      };
 
-    const existingItemIndex = cart.findIndex(item =>
+      const existingItemIndex = cart.findIndex(item =>
         item.id === product.id &&
         item.size === product.size &&
         item.color === product.color
