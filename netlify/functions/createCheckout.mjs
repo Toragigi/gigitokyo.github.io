@@ -1,56 +1,59 @@
+// /netlify/functions/createCheckout.mjs
 
-export default async (req, res) => {
-  try {
-    const SHOPIFY_DOMAIN = 'y24avg-qu.myshopify.com';
-    const STOREFRONT_ACCESS_TOKEN = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
-    const { lineItems } = await req.json();
-
-    const checkoutMutation = `
-      mutation checkoutCreate($lineItems: [CheckoutLineItemInput!]!) {
-        checkoutCreate(input: { lineItems: $lineItems }) {
-          checkout {
-            id
-            webUrl
-          }
-          checkoutUserErrors {
-            code
-            field
-            message
-          }
-        }
+const query = `
+  mutation checkoutCreate($input: CheckoutCreateInput!) {
+    checkoutCreate(input: $input) {
+      checkout {
+        id
+        webUrl
       }
-    `;
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
 
-    const response = await fetch(`https://${SHOPIFY_DOMAIN}/api/2023-07/graphql.json`, {
+exports.handler = async (event) => {
+  try {
+    const { cart } = JSON.parse(event.body);
+
+    const response = await fetch(`https://${process.env.SHOPIFY_DOMAIN}/api/2024-04/graphql.json`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Shopify-Storefront-Access-Token': STOREFRONT_ACCESS_TOKEN,
+        'X-Shopify-Storefront-Access-Token': process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN
       },
       body: JSON.stringify({
-        query: checkoutMutation,
+        query,
         variables: {
-          lineItems,
-        },
-      }),
+          input: {
+            lineItems: cart
+          }
+        }
+      })
     });
 
-    const responseBody = await response.json();
+    const result = await response.json();
 
-    if (responseBody.errors || responseBody.data?.checkoutCreate?.checkoutUserErrors?.length) {
-      return res.status(500).json({
-        error: 'Shopify checkoutCreate failed',
-        details: responseBody.errors || responseBody.data.checkoutCreate.checkoutUserErrors,
-      });
+    if (result.data && result.data.checkoutCreate && result.data.checkoutCreate.checkout) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ webUrl: result.data.checkoutCreate.checkout.webUrl })
+      };
+    } else {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'Shopify checkoutCreate failed', details: result.errors || result.data.checkoutCreate.userErrors })
+      };
     }
-
-    return res.status(200).json({
-      checkoutUrl: responseBody.data.checkoutCreate.checkout.webUrl,
-    });
-
-  } catch (error) {
-    console.error('Checkout creation failed:', error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+  } catch (err) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Function error', details: err.message })
+    };
   }
 };
