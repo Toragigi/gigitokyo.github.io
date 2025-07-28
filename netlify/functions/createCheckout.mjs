@@ -2,6 +2,9 @@ import { fetch } from 'undici';
 
 export const handler = async (event) => {
   try {
+    // 🔍 受け取ったデータを確認
+    console.log("📦 受け取ったevent.body:", event.body);
+
     const { cart } = JSON.parse(event.body);
 
     const storefrontAccessToken = 'abf38bfb3a6eca9154e3afe140fd1327';
@@ -13,6 +16,9 @@ export const handler = async (event) => {
         quantity: item.quantity,
       }))
     };
+
+    // 🔍 Shopifyに送るデータを確認
+    console.log("🛒 Shopifyに送るcheckoutData:", checkoutData);
 
     const response = await fetch(`https://${shopDomain}/api/2024-07/graphql.json`, {
       method: 'POST',
@@ -43,6 +49,19 @@ export const handler = async (event) => {
 
     const result = await response.json();
 
+    // 🔍 userErrors が返ってきた場合もログに出す
+    if (result.data?.checkoutCreate?.userErrors?.length > 0) {
+      console.error("❌ Shopify userErrors:", result.data.checkoutCreate.userErrors);
+      return {
+        statusCode: 500,
+        body: JSON.stringify({
+          error: 'Shopify returned userErrors',
+          details: result.data.checkoutCreate.userErrors
+        })
+      };
+    }
+
+    // 🔍 その他のエラー（dataがないなど）
     if (!result.data || !result.data.checkoutCreate) {
       console.error('❌ Shopifyエラー内容:', result.errors || result);
       return {
@@ -54,11 +73,13 @@ export const handler = async (event) => {
       };
     }
 
+    // 🔁 成功した場合はcheckout URLを返す
     return {
       statusCode: 200,
       body: JSON.stringify(result.data.checkoutCreate)
     };
   } catch (error) {
+    // 🔍 try全体で失敗した場合
     console.error('❌ エラー発生:', error);
     return {
       statusCode: 500,
