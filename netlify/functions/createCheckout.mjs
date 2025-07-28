@@ -1,6 +1,6 @@
 // /netlify/functions/createCheckout.mjs
 
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+import fetch from 'node-fetech';
 
 const query = `
   mutation checkoutCreate($input: CheckoutCreateInput!) {
