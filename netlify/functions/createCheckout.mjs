@@ -41,17 +41,20 @@ export const handler = async (event) => {
       })
     });
 
-    const result = await response.json();
+ const result = await response.json();
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify(result.data.checkoutCreate)
-    };
-  } catch (error) {
-    console.error('❌ エラー発生:', error); // ← Netlifyログにも出る
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message || 'Unknown error occurred' })
+if (!result.data || !result.data.checkoutCreate) {
+  console.error('❌ Shopifyエラー内容:', result.errors || result);
+  return {
+    statusCode: 500,
+    body: JSON.stringify({ error: 'Shopify checkoutCreate failed', details: result.errors || result })
+  };
+}
+
+return {
+  statusCode: 200,
+  body: JSON.stringify(result.data.checkoutCreate)
+};
     };
   }
 };
