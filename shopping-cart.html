@@ -300,7 +300,7 @@ const rawCart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Shopifyに送る形式だけ抽出
 const cart = rawCart.map(item => ({
-  variantId: btoa(`gid://shopify/ProductVariant/${item.variantId}`),
+  variantId: item.variantId,
   quantity: item.quantity
 }));
 
