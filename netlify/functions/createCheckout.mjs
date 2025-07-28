@@ -54,7 +54,6 @@ if (!result.data || !result.data.checkoutCreate) {
 return {
   statusCode: 200,
   body: JSON.stringify(result.data.checkoutCreate)
-};
     };
   }
 };
