@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   const { cart } = JSON.parse(event.body);
 
   const storefrontAccessToken = 'abf38bfb3a6eca9154e3afe140fd1327'; // ←置き換える
