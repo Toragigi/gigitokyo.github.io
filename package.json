@@ -1,0 +1,23 @@
+{
+  "name": "gigitokyo.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toragigi/gigitokyo.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Toragigi/gigitokyo.github.io/issues"
+  },
+  "homepage": "https://github.com/Toragigi/gigitokyo.github.io#readme",
+  "description": "",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
