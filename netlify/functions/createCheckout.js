@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 exports.handler = async (event) => {
   const { cart } = JSON.parse(event.body);
 
-  const storefrontAccessToken = 'abf38bfb3a6eca9154e3afe140fd1327'; // ←ここにShopifyのアクセストークンを入れる
+  const storefrontAccessToken = 'abf38bfb3a6eca9154e3afe140fd1327'; // ←置き換える
   const shopDomain = 'gigitokyo.myshopify.com';
 
   const checkoutData = {
@@ -41,10 +41,17 @@ exports.handler = async (event) => {
   });
 
   const result = await response.json();
-  const webUrl = result.data.checkoutCreate.checkout.webUrl;
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ webUrl }),
-  };
+  if (result.data && result.data.checkoutCreate && result.data.checkoutCreate.checkout) {
+    const webUrl = result.data.checkoutCreate.checkout.webUrl;
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ webUrl }),
+    };
+  } else {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: result.errors || result.data.checkoutCreate.userErrors }),
+    };
+  }
 };
