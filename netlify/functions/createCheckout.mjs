@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+inport fetch from 'node-fetch';
 
 exports.handler = async (event) => {
   const { cart } = JSON.parse(event.body);
