@@ -306,6 +306,7 @@
       });
 
       const result = await response.json();
+      console.log(result); //
 
       if (result.checkoutUrl) {
         window.location.href = result.checkoutUrl;
