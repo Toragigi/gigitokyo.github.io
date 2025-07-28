@@ -2,10 +2,18 @@ import { fetch } from 'undici';
 
 export const handler = async (event) => {
   try {
-    const { cart } = JSON.parse(event.body);
+    const body = event.body ? JSON.parse(event.body) : {};
+    const lines = Array.isArray(body.lines) ? body.lines : [];
+
+    if (lines.length === 0) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "No cart lines provided" })
+      };
+    }
 
     const storefrontAccessToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
-    const shopDomain = 'gigitokyo.myshopify.com'; // ←あなたのShopifyドメインに置き換えてください
+    const shopDomain = 'gigitokyo.myshopify.com'; // ← あなたのShopifyドメイン
 
     const response = await fetch(`https://${shopDomain}/api/2024-07/graphql.json`, {
       method: 'POST',
@@ -21,51 +29,35 @@ export const handler = async (event) => {
                 id
                 checkoutUrl
               }
-              userErrors {
-                field
-                message
-              }
             }
           }
         `,
         variables: {
           input: {
-            lines: cart.map(item => ({
-              quantity: item.quantity,
-              merchandiseId: item.variantId
-            }))
+            lines: lines
           }
         }
       })
     });
 
     const result = await response.json();
+    const checkoutUrl = result?.data?.cartCreate?.cart?.checkoutUrl;
 
-    if (result.data?.cartCreate?.userErrors?.length > 0) {
-      console.error("Shopify userErrors:", result.data.cartCreate.userErrors);
+    if (checkoutUrl) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ checkoutUrl }),
+      };
+    } else {
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: result.data.cartCreate.userErrors })
+        body: JSON.stringify({ error: "Failed to retrieve checkout URL", raw: result }),
       };
     }
-
-    if (!result.data || !result.data.cartCreate?.cart?.checkoutUrl) {
-      console.error("Unexpected response:", result);
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: "Invalid Shopify response", details: result })
-      };
-    }
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ checkoutUrl: result.data.cartCreate.cart.checkoutUrl })
-    };
   } catch (error) {
-    console.error("Error in createCart:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.message || "Unknown error" })
+      body: JSON.stringify({ error: error.message })
     };
   }
 };
