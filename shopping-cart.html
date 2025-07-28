@@ -296,50 +296,24 @@
         }
       });
        document.querySelector(".checkout-btn").addEventListener("click", async () => {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const lineItems = cart.map(item => ({
-        variantId: item.variantId,
-        quantity: item.quantity,
-      }));
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-      const response = await fetch("https://gigitokyo.myshopify.com/api/2023-07/graphql.json", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Shopify-Storefront-Access-Token": "abf38bfb3a6eca9154e3afe140fd1327"
-        },
-        body: JSON.stringify({
-          query: `
-            mutation checkoutCreate($input: CheckoutCreateInput!) {
-              checkoutCreate(input: $input) {
-                checkout {
-                  id
-                  webUrl
-                }
-                checkoutUserErrors {
-                  code
-                  field
-                  message
-                }
-              }
-            }
-          `,
-          variables: {
-            input: {
-              lineItems: lineItems
-            }
-          }
-        })
-      });
+  const response = await fetch("/.netlify/functions/createCheckout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ cart })
+  });
 
-      const result = await response.json();
-      if (result.data && result.data.checkoutCreate && result.data.checkoutCreate.checkout) {
-        const checkoutUrl = result.data.checkoutCreate.checkout.webUrl;
-        window.location.href = checkoutUrl;
-      } else {
-        console.error(result);
-        alert("チェックアウト作成に失敗しました");
-      }
+  const result = await response.json();
+
+  if (result.webUrl) {
+    window.location.href = result.webUrl;
+  } else {
+    console.error(result);
+    alert("チェックアウト作成に失敗しました");
+  }
     });
     });
   </script>
