@@ -19,7 +19,7 @@
   "homepage": "https://github.com/Toragigi/gigitokyo.github.io#readme",
   "description": "",
   "dependencies": {
-    "undici": "^5.28.4"
+    "undici": "^5.28.4",
     "node-fetch":"^3.4.1"
   }
 }
