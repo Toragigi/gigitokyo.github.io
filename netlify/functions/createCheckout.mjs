@@ -7,7 +7,8 @@ export const handler = async (event) => {
 
     const { cart } = JSON.parse(event.body);
 
-    const storefrontAccessToken = 'abf38bfb3a6eca9154e3afe140fd1327';
+    //
+    const storefrontAccessToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
     const shopDomain = 'gigitokyo.myshopify.com';
 
     const checkoutData = {
