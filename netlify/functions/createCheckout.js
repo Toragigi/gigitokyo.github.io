@@ -13,7 +13,7 @@ exports.handler = async (event) => {
     }))
   };
 
-  const response = await fetch(`https://${shopDomain}/api/2023-07/graphql.json`, {
+  const response = await fetch(`https://${shopDomain}/api/2024-07/graphql.json`, {
     method: 'POST',
     headers: {
       'X-Shopify-Storefront-Access-Token': storefrontAccessToken,
