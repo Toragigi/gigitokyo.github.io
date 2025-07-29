@@ -1,28 +1,3 @@
-<section class="contact-container">
-  <h2>Contact</h2>
-  <p class="contact-description">
-    GIGI Tokyoをご利用頂きありがとうございます。<br>
-    各種お問い合わせは下記のフォームよりご連絡ください。<br>
-    内容によっては回答をさしあげるのにお時間をいただくこともございます。<br>
-    また、休業日は翌営業日以降の対応となりますのでご了承ください。<br>
-    メールアドレスに誤りがある場合はご回答が出来かねますので、誤入力にはお気を付けくださいますようお願い致します。
-  </p>
+{% layout 'default' %}
 
-  <form action="mailto:info@gigitokyo.jp" method="POST" enctype="text/plain">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">E-mail</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <button type="submit">SEND</button>
-  </form>
-</section>
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap');
-  @import "{{ 'contact.css' | asset_url }}";
-</style>
+{% section 'contact-form' %}
