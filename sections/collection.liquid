@@ -7,16 +7,24 @@
   </div>
 
   <div class="collection-images">
-    <div class="collection-video">
-      <video autoplay muted loop playsinline>
-        <source src="{{ 'collection-video.mp4' | asset_url }}" type="video/mp4">
-      </video>
-    </div>
+    <!-- 動画 -->
+    <video class="collection-video" autoplay muted loop playsinline>
+      <source src="{{ 'collection-video.mp4' | asset_url }}" type="video/mp4">
+    </video>
 
+    <!-- 写真1 -->
     <div class="collection-image center">
-      <img src="{{ 'collection-image1.jpg' | asset_url }}" alt="Collection Image 1">
+      <img src="{{ 'collection-photo1.jpg' | asset_url }}" alt="Collection Photo 1">
     </div>
 
-    <!-- 必要に応じて、left / right / center の画像を追加 -->
+    <!-- 写真2 -->
+    <div class="collection-image left">
+      <img src="{{ 'collection-photo2.jpg' | asset_url }}" alt="Collection Photo 2">
+    </div>
+
+    <!-- 写真3 -->
+    <div class="collection-image right">
+      <img src="{{ 'collection-photo3.jpg' | asset_url }}" alt="Collection Photo 3">
+    </div>
   </div>
 </section>
