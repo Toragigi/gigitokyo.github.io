@@ -1,1 +1,17 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page_title }} | GIGI Tokyo</title>
+    <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+  <body>
+    {% section 'header' %}
+    {{ content_for_layout }}
+    {% section 'footer' %}
+  </body>
+</html>
