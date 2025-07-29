@@ -7,6 +7,7 @@
     <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
     {{ 'style.css' | asset_url | stylesheet_tag }}
+{{ 'main.js' | asset_url | script_tag }}
     {{ content_for_header }}
   </head>
   <body>
