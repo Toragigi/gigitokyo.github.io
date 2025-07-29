@@ -1,0 +1,45 @@
+.information-page {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 0 20px;
+  font-size: 14.5px;
+  line-height: 1.9;
+}
+
+.information-page h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.information-page h3 {
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.information-page p {
+  margin-bottom: 16px;
+}
+
+.no-style-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.no-style-link:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .information-page {
+    margin: 60px 15px;
+    font-size: 13.5px;
+  }
+
+  .information-page h2 {
+    font-size: 20px;
+  }
+}
