@@ -1,0 +1,22 @@
+{{ 'collection.css' | asset_url | stylesheet_tag }}
+
+<section>
+  <div class="collection-title">
+    <h2 class="collection-heading">2025 COLLECTION</h2>
+    <div class="underline"></div>
+  </div>
+
+  <div class="collection-images">
+    <div class="collection-video">
+      <video autoplay muted loop playsinline>
+        <source src="{{ 'collection-video.mp4' | asset_url }}" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="collection-image center">
+      <img src="{{ 'collection-image1.jpg' | asset_url }}" alt="Collection Image 1">
+    </div>
+
+    <!-- 必要に応じて、left / right / center の画像を追加 -->
+  </div>
+</section>
