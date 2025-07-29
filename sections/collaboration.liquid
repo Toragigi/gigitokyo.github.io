@@ -1,0 +1,50 @@
+{{ 'collaboration.css' | asset_url | stylesheet_tag }}
+
+<section class="collaboration-video-section">
+  <video autoplay loop muted playsinline class="collaboration-video">
+    <source src="{{ 'collaboration.mp4' | asset_url }}" type="video/mp4" />
+    お使いのブラウザは動画に対応していません。
+  </video>
+</section>
+
+<footer class="footer">
+  <div class="footer-columns">
+    <div class="footer-column support">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="/legal/information">Information</a></li>
+        <li><a href="/legal/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column legal">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="/legal/legal-notice">Legal Notice</a></li>
+        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-column back-to-top">
+      <ul>
+        <li><a href="/">トップに戻る</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 GIGI Tokyo. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuBtn");
+    menuBtn?.addEventListener("click", function () {
+      menuBtn.classList.toggle("active");
+    });
+    document.addEventListener("click", function (e) {
+      if (!menuBtn?.contains(e.target)) {
+        menuBtn.classList.remove("active");
+      }
+    });
+  });
+</script>
